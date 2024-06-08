@@ -51,6 +51,6 @@ def goombella_crump_sequence():
     input()
     print(Colors.reset + "Mario is confused")
     input()
-
-
-goombella_crump_sequence()
+    print(Colors.red + "Lord Crump: Gah! It's always something... Looks like I'm going to have to give you a little taste of the old CRUMP-A-BOMB!")
+    input()
+    print(Colors.reset + "-----BATTLE-----")

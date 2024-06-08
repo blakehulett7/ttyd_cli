@@ -4,9 +4,13 @@ def action_menu():
     print("2. Save")
     action = input("What would you like to do? ")
     if action == "1":
-        print("Starting crump goombella sequence...")
+        print("\nStarting crump goombella sequence...")
+        input()
+        return
     elif action == "2":
-        print("HA! There's no saving chump.")
+        print("\nHA! There's no saving chump.")
+        input()
+        action_menu()
     else:
         print("\nInvalid action, try again.")
         input()
