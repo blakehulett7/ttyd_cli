@@ -1,6 +1,16 @@
 import math
 
 
+class Colors:
+    reset = "\x1b[0m"
+    red = "\x1b[31m"
+    green = "\x1b[32m"
+    yellow = "\x1b[33m"
+    blue = "\x1b[34m"
+    magenta = "\x1b[35m"
+    cyan = "\x1b[36m"
+
+
 def text_formatter(text):
     lines = text.split("\n")
     stripped_lines = list(map(lambda line: line.strip(), lines))
@@ -33,7 +43,7 @@ def text_formatter(text):
             else:
                 first_box = raw_text[:dividing_index]
                 boxes.append(first_box)
-            raw_text = raw_text[dividing_index:].lstrip()
+                raw_text = raw_text[dividing_index:].lstrip()
     for box in boxes:
         if box != "":
             print(box)
