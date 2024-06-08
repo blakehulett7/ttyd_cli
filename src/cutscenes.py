@@ -1,0 +1,25 @@
+def opening_sequence():
+    print("Welcome to TTYD!")
+    input("Always press ENTER to continue...")
+    print("Go buy this game from Nintendo, it is awesome!!")
+    input()
+    print("We all know the opening book sequence. Imagine the book and backstory and boat and dialogue...")
+    input()
+    print("It's so beautiful!")
+    input()
+    print("Alright enough preamble, Mario gets dropped off at the Rogueport Docks.")
+    input()
+    print("In this tool, you move by inputting your actions as numbers. Press ENTER to continue...")
+    input()
+
+
+def goombella_crump_sequence():
+    print("Mario walks along the dock towards the town entrance.")
+    input()
+    print("Suddenly, Mario hears a voice cry out!")
+    input()
+    print("Girl: Hey! What do you want?!? Get away from me, freak!!!")
+    input()
+    print("Freak: Oh, come off it, you airhead! I know it's tough for you, but don't play dumb with me!")
+    input()
+    print("Freak: I've seen you walking around town asking about the Crystal Stars.")
