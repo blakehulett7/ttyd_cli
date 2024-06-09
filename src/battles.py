@@ -3,12 +3,13 @@ from battle_moves import body_slam
 from logic import Mario, Enemy
 
 
-def crump_opener():
+def crump_opener(mario, crump):
     print(Colors.cyan + "Girl:")
     input()
     text_formatter("""Battle time, Mister Man! Just find a way to beat this freak of the week,
       OK? Don't sweat the details. Just jump on him or hit him with your
       hammer!""")
+    battle(mario, [crump])
 
 
 def battle(mario, enemy_list):
@@ -27,8 +28,3 @@ def battle(mario, enemy_list):
             enemy.turn(mario)
 
         input()
-
-
-mario = Mario()
-crump = Enemy("Lord Crump", 5, 0, [body_slam])
-battle(mario, [crump])

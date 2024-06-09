@@ -11,7 +11,7 @@ class Move:
 
 
 class Enemy_Move:
-    def __init__(self, name, damage, latch):
+    def __init__(self, name, damage, latch=False):
         self.name = name
         self.damage = damage
         self.latch = latch
