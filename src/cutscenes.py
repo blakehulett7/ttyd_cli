@@ -1,4 +1,4 @@
-from graphics import Colors, text_formatter
+from graphics import Colors, text_formatter, print_red, print_cyan, print_green, print_reset
 
 
 def opening_sequence():
@@ -153,7 +153,8 @@ def plaza_entrance():
             place, hm? Ho ho! So tell me, Master Mario, what in the world
             brings you to this wretched little burg?""")
     print(Colors.reset + "Mario responds by raising his hand")
-    print(Colors.greeen + "Toadsworth:")
+    input()
+    print(Colors.green + "Toadsworth:")
     text_formatter("""...Hmm? Ah! Indeed?!? Princess Peach sent you a letter and a
             treasure map? And she told you she'd meet you here in Rogueport?!?
             Intriguing...""")
@@ -172,3 +173,71 @@ def plaza_entrance():
             possibility that she may never return. I've been at a loss as to
             what to do. I've been fraught with worry, I tell you!""")
     print(Colors.reset + "Mario responds")
+    input()
+    print_green("Toadsworth:")
+    text_formatter("""But I'm feeling better with you here, Master Mario. Surely we'll
+            find her! Surely! But I know my place, Master Mario...and this is
+            not it. I leave this task to you.""")
+    print_reset("Mario responds")
+    input()
+    print_green("Toadsworth:")
+    text_formatter("""I believe I'll recline in the Inn right over there and enjoy a spot
+            of tea, perhaps. In fact, I highly recommend it, particularly if
+            you find your HP (Heart Points) running low. Just drop on INN! Ho
+            ho! ...Yes, anyway, a little rest there will fill all of your HP. I
+            must say, though, the rest of this town is a bit...rough. Yes,
+            rough, indeed...""")
+    print_reset("Toadsworth walks into the Inn while huffing to himself")
+    input()
+    print_cyan("Goombella:")
+    text_formatter("""Um... Princess Peach? Did he mean, like, Peach, the Mushroom Kingdom
+           princess?!? The princess who always gets nabbed by Bowser, the Koopa
+           king? The one you rescue? Wait a sec'! This is crazy! Princess...
+           PEACH sent you that treasure map?""")
+    print_reset("Mario nods")
+    input()
+    print_cyan("Goombella:")
+    text_formatter("""Whoa. This is really intense. Well, where could she have gone, then,
+           do you think? You think maybe she got sick of waiting and went to
+           find the treasure on her own?""")
+    print_reset("Mario thinks")
+    input()
+    print_cyan("Goombella")
+    text_formatter("""Oooh! Oooh! I know, Mario! Come with me! One of my professors is
+           here researching that treasure. We'll show him your map! If we start
+           looking for the treasure, then maybe we'll catch up to Princess
+           Peach!""")
+    print_reset("Mario nods")
+    input()
+    print_cyan("Goombella: Great! We're all good, then! Let's go, Mario!")
+    input()
+    print_reset("Goombella joined your party!")
+    input()
+    print("Goombella's Abilities: A Primer")
+    input()
+    print("You've unlocked her Tattle ability on the menu")
+    input()
+    print("-----Rogueport Plaza-----")
+    print("1. Move")
+    print("2. Tattle <---")
+    print("3. Save")
+    input()
+    print("Use this to get information about nearby people, places, and objects.")
+    input()
+    print("For example:")
+    input()
+    print("-----Rogueport Plaza-----")
+    print("""This is Rogueport Plaza. It's the center of town, and the main business district. \nIt's a crossroads where many people meet, \nincluding more than a few shady characters.""")
+    input()
+    text_formatter("""Goombella can give you hints when she answers, so ask her for information
+    often! And of course, Goombella can be quite helpful in battle, too. She jumps
+    in the air to attack enemies with a nasty Headbonk. She can also look up enemy
+    HP and weaknesses with her Tattle ability!""")
+    print("-----Primer Over-----")
+    input()
+    print_cyan("Goombella:")
+    text_formatter("""First off, we gotta go find my professor. Thing is, since I just got
+        to town myself...I, um, don't actually know where he lives. So keep
+        an eye out!""")
+    input()
+    print_reset("End of cutscene")
