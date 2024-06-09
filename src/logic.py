@@ -120,16 +120,16 @@ class Mario:
                 command = input("Choose an action: ")
                 if command.isdigit() and int(command) in [i for i in range(1, len(enemy_list) + 2)]:
                     valid_command = True
-                if int(command) == 1 and used_moves == ["jump"]:
-                    print("\n" +
-                          Colors.cyan + "Girl: Try out that big looking hammer instead, it probably packs a punch!" + Colors.reset)
-                    input()
-                    valid_command = False
-                if int(command) == 2 and used_moves == ["hammer"]:
-                    print("\n" +
-                          Colors.cyan + "Girl: Try out those heavy looking boots instead, they'll probably squish him!" + Colors.reset)
-                    input()
-                    valid_command = False
+                    if int(command) == 1 and used_moves == ["jump"]:
+                        print("\n" +
+                              Colors.cyan + "Girl: Try out that big looking hammer instead, it probably packs a punch!" + Colors.reset)
+                        input()
+                        valid_command = False
+                    if int(command) == 2 and used_moves == ["hammer"]:
+                        print("\n" +
+                              Colors.cyan + "Girl: Try out those heavy looking boots instead, they'll probably squish him!" + Colors.reset)
+                        input()
+                        valid_command = False
             if int(command) == 1:
                 print("\nYou've selected jump!")
                 target = self.target_selection(enemy_list)

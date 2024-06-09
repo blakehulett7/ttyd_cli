@@ -10,7 +10,7 @@ def crump_opener(mario, crump):
       OK? Don't sweat the details. Just jump on him or hit him with your
       hammer!""")
     used_moves = []
-    while mario.hp > 0 and crump.hp > 0:
+    while crump.hp > 0:
         print(Colors.reset)
         print(mario)
         print(crump)
@@ -28,8 +28,10 @@ def crump_opener(mario, crump):
         print(Colors.reset)
         if crump.hp > 0:
             crump.turn(mario)
+        else:
+            print("-----END OF BATTLE-----")
+            print("Mario has defeated Lord Crump!")
         input()
-        print(used_moves)
 
 
 def battle(mario, enemy_list):
