@@ -96,3 +96,79 @@ def post_crump_opener():
     print(Colors.red + "Lord Crump: Uh... Crud! They bolted!")
     input()
     return
+
+
+def plaza_entrance():
+    print(Colors.reset + "Meanwhile, Mario and the goomba girl enter the Rogueport Plaza")
+    input()
+    print(Colors.cyan + "Girl: Wow, Mister! You...totally saved me! Thanks!")
+    input()
+    print("Girl: I have just GOT to give you a little reward!")
+    input()
+    print(Colors.reset + "She kisses Mario")
+    input()
+    print("Mario nods")
+    input()
+    print(Colors.cyan + "Girl: My name's Goombella. I'm a student at the University of Goom. Nice to meet ya!")
+    input()
+    print(Colors.reset + "Mario nods")
+    input()
+    print(Colors.cyan + "Goombella: So, uh... Who are you?")
+    input()
+    print(Colors.reset + "Mario exclaims")
+    input()
+    print(Colors.cyan + "Goombella: ...Mario? Wait, you mean, like, that famous guy? Wow! I can't believe I met you here!")
+    input()
+    print("Goombella: Cool... Anyway, no offense, but it looks like you just rolled into town yourself. Right?")
+    input()
+    print("Goombella:")
+    text_formatter("""Me, I already HATE it here! There are freaks and weirdos
+            EVERYWHERE! It's nasty! I mean, I know the place is called
+            Rogueport, so I should have expected it, but sheesh! I'd never come
+            to a place like this if there weren't some legendary treasure here.""")
+    print(Colors.reset + "Mario exclaims and raises his hand")
+    input()
+    print(Colors.cyan +
+          "Goombella: What? You're looking for the legendary treasure, too? Seriously?")
+    input()
+    print(Colors.reset + "Mario nods")
+    input()
+    print(Colors.cyan + "Goombella: Whoa whoa WHOA, bucko! Whatcha got there?")
+    input()
+    print(Colors.reset + "Mario shows Goombella the map")
+    input()
+    print(Colors.cyan + "Goombella: Omigosh! Is... Isn't that a treasure map?! You HAVE to tell me where you got that!")
+    input()
+    print(Colors.reset + "Mario raises his hand")
+    input()
+    print(Colors.cyan + "Goombella: ...Princess Peach? What?")
+    input()
+    print(Colors.green + "Voice: Great hoogly-boogly! If it isn't Master Mario!")
+    input()
+    print(Colors.reset + "Toadsworth appears. A group of Piantas can be seen in the background, beating up a guard with a spear")
+    input()
+    print(Colors.green + "Toadsworth:")
+    input()
+    text_formatter("""Bit of a coincidence, bumping into one another in this sort of
+            place, hm? Ho ho! So tell me, Master Mario, what in the world
+            brings you to this wretched little burg?""")
+    print(Colors.reset + "Mario responds by raising his hand")
+    print(Colors.greeen + "Toadsworth:")
+    text_formatter("""...Hmm? Ah! Indeed?!? Princess Peach sent you a letter and a
+            treasure map? And she told you she'd meet you here in Rogueport?!?
+            Intriguing...""")
+    print(Colors.reset + "Mario responds again")
+    input()
+    print(Colors.green + "Toadsworth:")
+    text_formatter("""You're asking me where Princess Peach is? Erm... I was about to ask
+            you that. We stoped in this town to acquire a spot of fuel for our
+            ship, don't you know... I only took my eye off her for a moment,
+            but as soon as I did, she vanished.""")
+    print(Colors.reset + "Mario is shocked")
+    input()
+    print(Colors.green + "Toadsworth:")
+    text_formatter("""You know how headstrong she is, Mario... I just assumed she'd be
+            back momentarily... But at this point, I fear we must embrace the
+            possibility that she may never return. I've been at a loss as to
+            what to do. I've been fraught with worry, I tell you!""")
+    print(Colors.reset + "Mario responds")

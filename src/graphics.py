@@ -48,3 +48,19 @@ def text_formatter(text):
         if box != "":
             print(box)
             input()
+
+
+def print_reset(text):
+    print(Colors.reset + text)
+
+
+def print_cyan(text):
+    print(Colors.cyan + text)
+
+
+def print_green(text):
+    print(Colors.green + text)
+
+
+def print_red(text):
+    print(Colors.red + text)
