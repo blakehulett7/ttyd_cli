@@ -25,8 +25,10 @@ class Mario:
             print(f"{i}. {move.name}")
         print("")
         move_index = int(input("Choose an action: ")) - 1
-        if -1 < move_index < len(self.moves_list):
-            print(move_index)
+        if 0 <= move_index < len(self.moves_list):
+            selected_move = self.moves_list[move_index]
+            print(selected_move.name)
+            print("")
         else:
             print("\nInvalid selection, try again.")
             self.turn()

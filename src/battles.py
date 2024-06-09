@@ -4,19 +4,27 @@ from logic import Mario, Enemy
 
 
 def crump_opener():
-    mario = Mario()
-    crump = Enemy("Lord Crump", 5, 0, [body_slam])
     print(Colors.cyan + "Girl:")
     input()
     text_formatter("""Battle time, Mister Man! Just find a way to beat this freak of the week,
       OK? Don't sweat the details. Just jump on him or hit him with your
       hammer!""")
-    while mario.hp != 0 and crump.hp != 0:
+
+
+def battle(mario, enemy_list):
+    print(Colors.reset)
+    while mario.hp != 0 and enemy_list != []:
         print(mario)
-        print(crump)
+        for enemy in enemy_list:
+            print(enemy)
         mario.turn()
+        for enemy in enemy_list:
+            if enemy.hp == 0:
+                enemy_list.remove(enemy)
 
         input()
 
 
-crump_opener()
+mario = Mario()
+crump = Enemy("Lord Crump", 5, 0, [body_slam])
+battle(mario, [crump])
