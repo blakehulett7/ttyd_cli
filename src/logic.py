@@ -35,10 +35,11 @@ class Mario:
                 command = input("Choose an action: ")
             if int(command) == 1:
                 print("\nYou've selected jump!")
-                input()
                 target = self.target_selection(enemy_list)
                 if target == "Go Back":
                     go_back = True
+                else:
+                    self.battle_jump(target)
             if int(command) == 2:
                 confirmed = False
                 while not confirmed:
@@ -50,13 +51,14 @@ class Mario:
                         confirmed = True
                     if answer in ["Y", "y"]:
                         confirmed = True
+                self.battle_hammer(enemy_list[0])
 
     def target_selection(self, enemy_list):
         confirmed = False
         while not confirmed:
             valid_selection = False
             while not valid_selection:
-                print("-----Enemies-----")
+                print("\n-----Enemies-----")
                 for enemy in enemy_list:
                     j = enemy_list.index(enemy) + 1
                     print(f"{j}. {enemy.name}")
@@ -70,10 +72,17 @@ class Mario:
                 confirmed = True
                 result = "Go Back"
             else:
-                target_index = int(selection) - 1
-                target = enemy_list[target_index]
-                answer = input(f"You will target {
-                               target.name}, is this ok? (Y/n): ")
+                valid_answer = False
+                while not valid_answer:
+                    target_index = int(selection) - 1
+                    target = enemy_list[target_index]
+                    answer = input(f"You will target {
+                        target.name}, is this ok? (Y/n): ")
+                    if answer in ["Y", "y", "N", "n"]:
+                        valid_answer = True
+                if answer in ["Y", "y"]:
+                    result = target
+                    confirmed = True
         return result
 
     def battle_jump(self, target):
