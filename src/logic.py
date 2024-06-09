@@ -34,11 +34,15 @@ class Mario:
                 print("")
                 command = input("Choose an action: ")
             if int(command) == 1:
-                print("Jump")
+                print("\nYou've selected jump!")
+                input()
+                target = self.target_selection(enemy_list)
+                if target == "Go Back":
+                    go_back = True
             if int(command) == 2:
                 confirmed = False
                 while not confirmed:
-                    print("\nYou've selected hammer.")
+                    print("\nYou've selected hammer!")
                     answer = input(f"You will target {
                         enemy_list[0].name}, is this ok? (Y/n): ")
                     if answer in ["N", "n"]:
@@ -48,26 +52,29 @@ class Mario:
                         confirmed = True
 
     def target_selection(self, enemy_list):
-        confirmation = "None"
-        while confirmation not in ["Y", "y"]:
-            command = "None"
-            while not command.isdigit() or int(command) - 1 not in [i for i in range(len(enemy_list) + 1)]:
-                print("")
+        confirmed = False
+        while not confirmed:
+            valid_selection = False
+            while not valid_selection:
                 print("-----Enemies-----")
                 for enemy in enemy_list:
-                    i = enemy_list.index(enemy) + 1
-                    print(f"{i}. {enemy.name}")
-                i += 1
-                print(f"{i}. Go back")
+                    j = enemy_list.index(enemy) + 1
+                    print(f"{j}. {enemy.name}")
+                j += 1
+                print(f"{j}. Go Back")
                 print("")
-                command = input("Choose a target: ")
-            if int(command) == i:
-                return None
-            index = int(command) - 1
-            selection = enemy_list[index]
-            confirmation = input(f"\nYou will target {
-                selection.name}, is this ok?(Y/n): ")
-        return selection
+                selection = input("Choose a target: ")
+                if selection.isdigit() and int(selection) in [i for i in range(1, len(enemy_list) + 2)]:
+                    valid_selection = True
+            if int(selection) == j:
+                confirmed = True
+                result = "Go Back"
+            else:
+                target_index = int(selection) - 1
+                target = enemy_list[target_index]
+                answer = input(f"You will target {
+                               target.name}, is this ok? (Y/n): ")
+        return result
 
     def battle_jump(self, target):
         damage_calculation = self.jump.damage - target.defense
