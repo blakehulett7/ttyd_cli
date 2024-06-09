@@ -18,7 +18,7 @@ class Enemy_Move:
 
     def battle(self, user, target):
         damage_calculation = self.damage - target.defense
-        print(f"{self.name} body slams {target.name} for {
+        print(f"{user.name} body slams {target.name} for {
               damage_calculation} damage.")
         target.hp -= damage_calculation
 

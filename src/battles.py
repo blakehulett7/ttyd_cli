@@ -17,12 +17,14 @@ def battle(mario, enemy_list):
         print(mario)
         for enemy in enemy_list:
             print(enemy)
+        input()
         mario.turn(enemy_list)
-        print("end of mario's turn")
+        input()
         for enemy in enemy_list:
-            enemy.turn(mario)
             if enemy.hp <= 0:
                 enemy_list.remove(enemy)
+        for enemy in enemy_list:
+            enemy.turn(mario)
 
         input()
 

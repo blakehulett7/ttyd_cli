@@ -20,7 +20,7 @@ class Mario:
         self.moves_list = [self.jump, self.hammer]
 
     def __repr__(self):
-        return f"(Mario! {self.hp} hp, {self.fp} fp, {self.bp} bp)"
+        return f"(Mario, {self.hp} hp, {self.fp} fp, {self.bp} bp)"
 
     def turn(self, enemy_list):
         go_back = True
@@ -54,6 +54,8 @@ class Mario:
                     if answer in ["Y", "y"]:
                         confirmed = True
                 self.battle_hammer(enemy_list[0])
+        input()
+        print("end of Mario's turn")
 
     def target_selection(self, enemy_list):
         confirmed = False
@@ -114,5 +116,9 @@ class Enemy:
         return f"({self.name}, {self.hp} hp, {self.defense} defense.)"
 
     def turn(self, target):
+        print(f"-----{self.name}'s turn-----")
+        input()
         selected_move = random.choice(self.moves_list)
         selected_move.battle(self, target)
+        input()
+        print(f"end of {self.name}'s turn")
