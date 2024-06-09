@@ -19,7 +19,7 @@ def battle(mario, enemy_list):
             print(enemy)
         mario.turn(enemy_list)
         for enemy in enemy_list:
-            if enemy.hp == 0:
+            if enemy.hp <= 0:
                 enemy_list.remove(enemy)
 
         input()
