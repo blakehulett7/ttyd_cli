@@ -36,19 +36,33 @@ class Mario:
         else:
             move_index = int(command)
         if move_index == 1:
+            print("\nYou've selected jump")
+            input()
+            self.target_selection(enemy_list)
             self.battle_jump(enemy_list[0])
         elif move_index == 2:
+            print("\nYou've selected hammer")
+            input()
+            confirmation = input(f"You will target {
+                                 enemy_list[0].name}, is this ok? ")
             self.battle_hammer(enemy_list[0])
+
+    def target_selection(self, enemy_list):
+        print("Select a target:")
+        for enemy in enemy_list:
+            print(enemy.name)
+        command = 0
 
     def battle_jump(self, target):
         damage_calculation = self.jump.damage - target.defense
-        input(f"Mario jumps on {target.name} for {damage_calculation} damage")
-        input(f"Mario jumps on {target.name} for {damage_calculation} damage")
+        input(f"Mario jumps on {target.name} for {
+              damage_calculation} damage")
+        print(f"Mario jumps on {target.name} for {damage_calculation} damage")
         target.hp -= damage_calculation * 2
 
     def battle_hammer(self, target):
         damage_calculation = self.hammer.damage - target.defense
-        print(f"\nMario whacks {target.name} with a hammer for {
+        print(f"Mario whacks {target.name} with a hammer for {
               damage_calculation} damage.")
         target.hp -= damage_calculation
 
