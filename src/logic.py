@@ -21,19 +21,31 @@ class Mario:
         return f"(Mario! {self.hp} hp, {self.fp} fp, {self.bp} bp)"
 
     def turn(self, enemy_list):
-        command = "None"
-        while not command.isdigit() or int(command) not in [i for i in range(1, len(enemy_list) + 2)]:
-            print("")
-            print("-----Mario's Turn-----")
-            for move in self.moves_list:
-                i = self.moves_list.index(move) + 1
-                print(f"{i}. {move.name}")
-            print("")
-            command = input("Choose an action: ")
-        if int(command) == 1:
-            print("Jump")
-        if int(command) == 2:
-            print("Hammer")
+        go_back = True
+        while go_back:
+            go_back = False
+            command = "None"
+            while not command.isdigit() or int(command) not in [i for i in range(1, len(enemy_list) + 2)]:
+                print("")
+                print("-----Mario's Turn-----")
+                for move in self.moves_list:
+                    i = self.moves_list.index(move) + 1
+                    print(f"{i}. {move.name}")
+                print("")
+                command = input("Choose an action: ")
+            if int(command) == 1:
+                print("Jump")
+            if int(command) == 2:
+                confirmed = False
+                while not confirmed:
+                    print("\nYou've selected hammer.")
+                    answer = input(f"You will target {
+                        enemy_list[0].name}, is this ok? (Y/n): ")
+                    if answer in ["N", "n"]:
+                        go_back = True
+                        confirmed = True
+                    if answer in ["Y", "y"]:
+                        confirmed = True
 
     def target_selection(self, enemy_list):
         confirmation = "None"
