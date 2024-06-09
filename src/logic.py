@@ -41,11 +41,15 @@ class Mario:
             self.target_selection(enemy_list)
             self.battle_jump(enemy_list[0])
         elif move_index == 2:
-            print("\nYou've selected hammer")
-            input()
-            confirmation = input(f"You will target {
-                                 enemy_list[0].name}, is this ok? ")
-            self.battle_hammer(enemy_list[0])
+            print("\nYou've selected hammer!")
+            confirmation = 0
+            while confirmation not in ["Y", "y", "N", "n"]:
+                confirmation = input(f"You will target {
+                    enemy_list[0].name}, is this ok?(Y/n): ")
+            if confirmation in ["N", "n"]:
+                self.turn(enemy_list)
+            elif confirmation in ["Y", "y"]:
+                self.battle_hammer(enemy_list[0])
 
     def target_selection(self, enemy_list):
         print("Select a target:")
@@ -62,7 +66,7 @@ class Mario:
 
     def battle_hammer(self, target):
         damage_calculation = self.hammer.damage - target.defense
-        print(f"Mario whacks {target.name} with a hammer for {
+        print(f"\nMario whacks {target.name} with a hammer for {
               damage_calculation} damage.")
         target.hp -= damage_calculation
 
