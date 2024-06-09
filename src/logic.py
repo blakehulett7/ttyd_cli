@@ -1,4 +1,5 @@
 import random
+from graphics import Colors
 from battle_moves import Move, Enemy_Move
 
 
@@ -101,6 +102,57 @@ class Mario:
         print(f"\nMario whacks {target.name} with a hammer for {
               damage_calculation} damage.")
         target.hp -= damage_calculation
+
+    # Only ever used in the opening Crump Fight
+    def opening_tutorial_turn(self, used_moves, enemy_list):
+        go_back = True
+        while go_back:
+            go_back = False
+            valid_command = False
+            while not valid_command:
+                print("")
+                print("-----Mario's Turn-----")
+                for move in self.moves_list:
+                    i = self.moves_list.index(move) + 1
+                    print(f"{i}. {move.name}")
+                print("")
+                command = input("Choose an action: ")
+                if command.isdigit() and int(command) in [i for i in range(1, len(enemy_list) + 2)]:
+                    valid_command = True
+                if int(command) == 1 and used_moves == ["jump"]:
+                    print("\n" +
+                          Colors.cyan + "Girl: Try out that big looking hammer instead, it probably packs a punch!" + Colors.reset)
+                    input()
+                    valid_command = False
+                if int(command) == 2 and used_moves == ["hammer"]:
+                    print("\n" +
+                          Colors.cyan + "Girl: Try out those heavy looking boots instead, they'll probably squish him!" + Colors.reset)
+                    input()
+                    valid_command = False
+            if int(command) == 1:
+                print("\nYou've selected jump!")
+                target = self.target_selection(enemy_list)
+                if target == "Go Back":
+                    go_back = True
+                else:
+                    self.battle_jump(target)
+                    move = "jump"
+            if int(command) == 2:
+                confirmed = False
+                while not confirmed:
+                    print("\nYou've selected hammer!")
+                    answer = input(f"You will target {
+                        enemy_list[0].name}, is this ok? (Y/n): ")
+                    if answer in ["N", "n"]:
+                        go_back = True
+                        confirmed = True
+                    if answer in ["Y", "y"]:
+                        confirmed = True
+                self.battle_hammer(enemy_list[0])
+                move = "hammer"
+        input()
+        print("end of Mario's turn")
+        return move
 
 
 class Enemy:

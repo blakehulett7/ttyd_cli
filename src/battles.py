@@ -9,12 +9,32 @@ def crump_opener(mario, crump):
     text_formatter("""Battle time, Mister Man! Just find a way to beat this freak of the week,
       OK? Don't sweat the details. Just jump on him or hit him with your
       hammer!""")
-    battle(mario, [crump])
+    used_moves = []
+    while mario.hp > 0 and crump.hp > 0:
+        print(Colors.reset)
+        print(mario)
+        print(crump)
+        input()
+        used_moves.append(mario.opening_tutorial_turn(used_moves, [crump]))
+        input()
+        if used_moves == ["jump"]:
+            print(Colors.cyan +
+                  "Girl: Nice Move! Try whacking him with that hammer next.")
+            input()
+        if used_moves == ["hammer"]:
+            print(
+                Colors.cyan + "Girl: Way to bop him! Try jumping on him with those heavy boots next.")
+            input()
+        print(Colors.reset)
+        if crump.hp > 0:
+            crump.turn(mario)
+        input()
+        print(used_moves)
 
 
 def battle(mario, enemy_list):
     print(Colors.reset)
-    while mario.hp != 0 and enemy_list != []:
+    while mario.hp > 0 and enemy_list != []:
         print(mario)
         for enemy in enemy_list:
             print(enemy)
