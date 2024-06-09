@@ -27,14 +27,18 @@ class Mario:
             i = self.moves_list.index(move) + 1
             print(f"{i}. {move.name}")
         print("")
-        move_index = int(input("Choose an action: ")) - 1
-        if 0 <= move_index < len(self.moves_list):
-            selected_move = self.moves_list[move_index]
-            print(selected_move.name)
-            print("")
-        else:
-            print("\nInvalid selection, try again.")
-            self.turn()
+        try:
+            move_index = int(input("Choose an action: ")) - 1
+            if 0 <= move_index < len(self.moves_list):
+                selected_move = self.moves_list[move_index]
+                print(selected_move.name)
+                print("")
+            else:
+                print("\nInvalid selection, try again.")
+                self.turn(enemy_list)
+        except ValueError:
+            print("Invalid selection, try again.")
+            self.turn(enemy_list)
 
     def battle_jump(self, target):
         damage_calculation = self.jump.damage - target.defense

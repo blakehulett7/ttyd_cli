@@ -17,7 +17,7 @@ def battle(mario, enemy_list):
         print(mario)
         for enemy in enemy_list:
             print(enemy)
-        mario.turn()
+        mario.turn(enemy_list)
         for enemy in enemy_list:
             if enemy.hp == 0:
                 enemy_list.remove(enemy)
@@ -27,4 +27,4 @@ def battle(mario, enemy_list):
 
 mario = Mario()
 crump = Enemy("Lord Crump", 5, 0, [body_slam])
-mario.battle_jump(crump)
+battle(mario, [crump])
