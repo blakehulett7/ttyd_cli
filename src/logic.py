@@ -1,4 +1,5 @@
-from battle_moves import Move
+import random
+from battle_moves import Move, Enemy_Move
 
 
 class Game_Master:
@@ -8,6 +9,7 @@ class Game_Master:
 
 class Mario:
     def __init__(self):
+        self.name = "Mario"
         self.hp = 10
         self.fp = 5
         self.bp = 3
@@ -110,3 +112,7 @@ class Enemy:
 
     def __repr__(self):
         return f"({self.name}, {self.hp} hp, {self.defense} defense.)"
+
+    def turn(self, target):
+        selected_move = random.choice(self.moves_list)
+        selected_move.battle(self, target)

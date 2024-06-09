@@ -20,6 +20,7 @@ def battle(mario, enemy_list):
         mario.turn(enemy_list)
         print("end of mario's turn")
         for enemy in enemy_list:
+            enemy.turn(mario)
             if enemy.hp <= 0:
                 enemy_list.remove(enemy)
 
