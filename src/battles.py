@@ -31,6 +31,9 @@ def crump_opener(mario, crump):
         else:
             print("-----END OF BATTLE-----")
             print("Mario has defeated Lord Crump!")
+            mario.star_points += 9
+            print(
+                f"Mario gets 9 star points for a total of {mario.star_points}!")
         input()
 
 

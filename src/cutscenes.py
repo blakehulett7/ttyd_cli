@@ -17,7 +17,7 @@ def opening_sequence():
 
 
 def goombella_crump_sequence():
-    print("Mario walks along the dock towards the town entrance.")
+    print("\nMario walks along the dock towards the town entrance.")
     input()
     print("Suddenly, Mario hears a voice cry out!")
     input()
@@ -54,3 +54,23 @@ def goombella_crump_sequence():
     print(Colors.red + "Lord Crump: Gah! It's always something... Looks like I'm going to have to give you a little taste of the old CRUMP-A-BOMB!")
     input()
     print(Colors.reset + "-----BATTLE-----")
+
+
+def post_crump_opener():
+    print(Colors.cyan + "Girl: You did it! You did it! YESSS! And you got Star Points!!!")
+    input()
+    text_formatter("""Yeah, I bet you know, but you get these things called Star Points when
+      you win battles. When you get 100 points, you'll go up a level. Don't
+      forget that, OK?""")
+    print(Colors.red + "Lord Crump:")
+    text_formatter("""Buh! Buh! Buh huh huh! OK, you got a couple decent shots in, I'll
+            give you that. But...unfortunately for you...that means...""")
+    print("IT'S GO TIME!")
+    input()
+    print(Colors.reset + "Millions of X-Nauts gather around Mario and the Goomba girl")
+    input()
+    print(Colors.red + "Lord Crump: PUNISH HIM!")
+    input()
+    print(Colors.reset + "The X-Nauts gang up on both Mario and the Goomba girl, but she escapes and tells Mario to follow her")
+    input()
+    print(Colors.cyan + "Girl: Quick! This way!")

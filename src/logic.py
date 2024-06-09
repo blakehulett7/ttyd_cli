@@ -11,6 +11,7 @@ class Game_Master:
 class Mario:
     def __init__(self):
         self.name = "Mario"
+        self.star_points = 0
         self.hp = 10
         self.fp = 5
         self.bp = 3
