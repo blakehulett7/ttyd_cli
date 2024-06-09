@@ -54,7 +54,8 @@ class Mario:
                         confirmed = True
                     if answer in ["Y", "y"]:
                         confirmed = True
-                self.battle_hammer(enemy_list[0])
+                if not go_back:
+                    self.battle_hammer(enemy_list[0])
         input()
         print("end of Mario's turn")
 
@@ -148,7 +149,8 @@ class Mario:
                         confirmed = True
                     if answer in ["Y", "y"]:
                         confirmed = True
-                self.battle_hammer(enemy_list[0])
+                if not go_back:
+                    self.battle_hammer(enemy_list[0])
                 move = "hammer"
         input()
         print("end of Mario's turn")
