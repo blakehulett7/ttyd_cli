@@ -17,7 +17,4 @@ class Enemy_Move:
         self.latch = latch
 
 
-jump = Move("Jump", "Jump on an enemy", 1, True, False)
-hammer = Move("Hammer", "Whack an enemy with your hammer", 2, False, True)
-
 body_slam = Enemy_Move("Body Slam", 1, False)

@@ -1,4 +1,4 @@
-from battle_moves import jump, hammer
+from battle_moves import Move
 
 
 class Game_Master:
@@ -12,12 +12,15 @@ class Mario:
         self.fp = 5
         self.bp = 3
         self.defense = 0
-        self.moves_list = [jump, hammer]
+        self.jump = Move("Jump", "Jump on an enemy", 1, True, False)
+        self.hammer = Move(
+            "Hammer", "Whack an enemy with your hammer", 2, False, True)
+        self.moves_list = [self.jump, self.hammer]
 
     def __repr__(self):
         return f"(Mario! {self.hp} hp, {self.fp} fp, {self.bp} bp)"
 
-    def turn(self):
+    def turn(self, enemy_list):
         print("")
         print("-----Mario's Turn-----")
         for move in self.moves_list:
@@ -32,6 +35,11 @@ class Mario:
         else:
             print("\nInvalid selection, try again.")
             self.turn()
+
+    def battle_jump(self, target):
+        damage_calculation = self.jump.damage - target.defense
+        input(f"Mario jumps on {target.name} for {damage_calculation} damage")
+        input(f"Mario jumps on {target.name} for {damage_calculation} damage")
 
 
 class Enemy:

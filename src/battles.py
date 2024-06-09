@@ -27,4 +27,4 @@ def battle(mario, enemy_list):
 
 mario = Mario()
 crump = Enemy("Lord Crump", 5, 0, [body_slam])
-battle(mario, [crump])
+mario.battle_jump(crump)
