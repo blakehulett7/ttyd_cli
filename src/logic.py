@@ -34,12 +34,20 @@ class Mario:
             print("\nInvalid command, try again.")
             self.turn(enemy_list)
         else:
-            print("Way to follow directions!")
+            move_index = int(command) - 1
+            selected_move = self.moves_list[move_index].name.lower()
 
     def battle_jump(self, target):
         damage_calculation = self.jump.damage - target.defense
         input(f"Mario jumps on {target.name} for {damage_calculation} damage")
         input(f"Mario jumps on {target.name} for {damage_calculation} damage")
+        input()
+
+    def battle_hammer(self, target):
+        damage_calculation = self.hammer.damage - target.defense
+        print(f"\nMario whacks {target.name} with a hammer for {
+              damage_calculation} damage.")
+        input()
 
 
 class Enemy:
