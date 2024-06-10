@@ -20,6 +20,8 @@ def main():
     gm.room = "Rogueport Plaza"
     plaza_entrance()
     gm.gamestate = 2
+    running = True
+    while running:
 
 
 main()
