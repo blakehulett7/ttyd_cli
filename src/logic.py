@@ -158,6 +158,10 @@ class Mario:
         return move
 
 
+def tattle(room):
+    print(f"\n{room} Tattle")
+
+
 class Enemy:
     def __init__(self, name, hp, defense, moves_list, special=None):
         self.name = name
