@@ -1,6 +1,7 @@
 import random
+from rooms import Room
 from graphics import Colors
-from battle_moves import Move, Enemy_Move
+from battle_moves import Move
 
 
 class Game_Master:
@@ -8,6 +9,13 @@ class Game_Master:
         self.room = "Rogueport Docks"
         self.gamestate = 1
         self.zess_t = False
+
+    def initialize_rooms(self):
+        self.room_list = {
+            "Rogueport Plaza": Room("Rogueport Plaza", ["Rogueport East"], None),
+            "Rogueport East": Room()
+
+        }
 
 
 class Mario:
