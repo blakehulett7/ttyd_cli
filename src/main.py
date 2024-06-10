@@ -20,16 +20,6 @@ def main():
     gm.room = "Rogueport Plaza"
     plaza_entrance()
     gm.gamestate = 2
-    running = True
-    while running:
-        launch_room(gm, gm.room)
-
-
-def launch_room(gm, room):
-    if room == "Rogueport Plaza":
-        rogueport_plaza(gm)
-    if room == "Rogueport East":
-        rogueport_east(gm)
 
 
 main()
