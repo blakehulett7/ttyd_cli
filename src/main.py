@@ -22,6 +22,7 @@ def main():
     gm.gamestate = 2
     running = True
     while running:
+        gm.room.launch()
 
 
 main()
