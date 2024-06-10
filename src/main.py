@@ -3,6 +3,8 @@ from battles import crump_opener
 from action_menu import action_menu_opener
 from logic import Mario, Enemy, Game_Master
 from battle_moves import Enemy_Move
+from room_rogueport_plaza import rogueport_plaza
+from room_rogueport_east import rogueport_east
 
 
 def main():
@@ -17,6 +19,17 @@ def main():
     post_crump_opener()
     gm.room = "Rogueport Plaza"
     plaza_entrance()
+    gm.gamestate = 2
+    running = True
+    while running:
+        launch_room(gm, gm.room)
+
+
+def launch_room(gm, room):
+    if room == "Rogueport Plaza":
+        rogueport_plaza(gm)
+    if room == "Rogueport East":
+        rogueport_east(gm)
 
 
 main()

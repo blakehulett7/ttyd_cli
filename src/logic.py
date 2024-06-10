@@ -6,6 +6,8 @@ from battle_moves import Move, Enemy_Move
 class Game_Master:
     def __init__(self):
         self.room = "Rogueport Docks"
+        self.gamestate = 1
+        self.zess_t = False
 
 
 class Mario:

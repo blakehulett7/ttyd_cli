@@ -29,6 +29,7 @@ def action_menu_prefight(gm):
     elif action == "2":
         tattle(gm.room)
         input()
+        action_menu_prefight(gm)
     elif action == "3":
         print("\nHA! There's no saving chump.")
         input()

@@ -1,21 +1,19 @@
-from logic import Game_Master
 from action_menu import action_menu_prefight
 
 
-def rogueport_plaza(gm):
+def rogueport_east(gm):
     running = True
     while running:
         action_menu_prefight(gm)
-        rp_navigation(gm)
+        re_navigation(gm)
 
 
-def rp_navigation(gm):
+def re_navigation(gm):
     valid_action = False
     while not valid_action:
-        destinations = ["Rogueport East", "Rogueport West",
-                        "Back Alley", "Item Shop", "Inn", "Badge Shop"]
-        if gm.zess_t:
-            destinations.append("Zess T")
+        destinations = ["Rogueport Plaza", "Frankly's House", "Merlin's House"]
+        if gm.gamestate > 2:
+            destinations.append("Warp Pipe")
         destinations.append("Go Back")
         i = 1
         print("")
@@ -29,17 +27,15 @@ def rp_navigation(gm):
         else:
             if action == "1":
                 valid_action = True
-                print("\nstory progresses")
-                gm.room = "Rogueport East"
+                print("\nGoing back to Rogueport Plaza")
                 input()
+                gm.room = "Rogueport Plaza"
             if action == "2":
-                print("\nZess T sequence")
+                print("\nstory progresses")
                 input()
-            if action in ["3", "4", "5", "6"]:
-                print("\nnot implemented")
-                input()
-            if destinations[int(action) - 1] == "Zess T":
-                print("\nnot implemented")
+                rogueport_east(gm)
+            if action == "3":
+                print("\nNot Implemented")
                 input()
             if destinations[int(action) - 1] == "Go Back":
                 print("\nGoing Back")
