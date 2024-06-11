@@ -1,9 +1,11 @@
 class Room:
-    def __init__(self, name, desciption, destinations, enemies):
+    def __init__(self, name, desciption, destinations, enemies, enemy_formations):
         self.name = name
         self.desciption = desciption
         self.destinations = destinations
         self.enemies = enemies
+        self.enemies_backup = enemies
+        self.enemy_formations = enemy_formations
 
     def launch(self, gm):
         action = self.action_menu()
@@ -58,6 +60,9 @@ class Room:
                     self.reset_enemies()
 
     def fight(self):
+        if self.enemies is None or self.enemies == []:
+            print("\nNo enemies to fight")
+            return
         valid_enemy = False
         while not valid_enemy:
             options = []
