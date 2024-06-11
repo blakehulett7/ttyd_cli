@@ -8,6 +8,8 @@ class Room:
         action = self.action_menu()
         if action == "1":
             self.navigation(gm)
+        if action == "2":
+            print("\nNot Implemented Yet")
 
     def action_menu(self):
         valid_action = False
@@ -41,7 +43,6 @@ class Room:
             if dest not in options:
                 input("\nInvalid destination, try again")
             else:
-                print("Valid selection")
                 valid_dest = True
                 if dest == options[-1]:
                     print("")
