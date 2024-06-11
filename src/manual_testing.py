@@ -1,12 +1,16 @@
 from cutscenes import opening_sequence, goombella_crump_sequence, post_crump_opener, plaza_entrance
 from battles import crump_opener
-from action_menu import action_menu
-from logic import Mario, Enemy
+from logic import Mario, Enemy, Game_Master
 from battle_moves import Enemy_Move
 
 
 def main():
-    plaza_entrance()
+    gm = Game_Master()
+    gm.initialize_rooms()
+    gm.room = gm.room_list["Rogueport Plaza"]
+    running = True
+    while running:
+        gm.room.launch(gm)
 
 
 main()

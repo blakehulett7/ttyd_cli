@@ -8,7 +8,7 @@ from rooms import Room
 
 def main():
     gm = Game_Master()
-    initialize_rooms()
+    gm.initialize_rooms()
     # Rogueport Docks
     opening_sequence()
     action_menu_opener()
@@ -17,20 +17,12 @@ def main():
     crump = Enemy("Lord Crump", 5, 0, [Enemy_Move("Body Slam", 1)])
     crump_opener(mario, crump)
     post_crump_opener()
-    gm.room = rogueport_plaza
+    gm.room = gm.room_list["Rogueport Plaza"]
     plaza_entrance()
     gm.gamestate = 2
     running = True
     while running:
         gm.room.launch()
-
-
-def initialize_rooms():
-    rogueport_plaza = Room("Rogueport Plaza", ["Rogueport East"])
-    rogueport_east = Room("Rogueport East", [
-                          "Rogueport Plaza", "Frankly's House", "Merlin's House"
-                          ],
-                          None)
 
 
 main()

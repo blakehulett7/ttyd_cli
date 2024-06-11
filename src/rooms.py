@@ -4,10 +4,10 @@ class Room:
         self.destinations = destinations
         self.enemies = enemies
 
-    def launch(self):
+    def launch(self, gm):
         action = self.action_menu()
         if action == "1":
-            self.navigation()
+            self.navigation(gm)
 
     def action_menu(self):
         valid_action = False
@@ -24,7 +24,7 @@ class Room:
             else:
                 return action
 
-    def navigation(self):
+    def navigation(self, gm):
         valid_dest = False
         while not valid_dest:
             options = []
@@ -47,10 +47,5 @@ class Room:
                     print("")
                 else:
                     dest_index = int(dest) - 1
-                    gm.room = self.destinations[dest_index]
-
-
-rp = Room("Rogueport East", [
-    "Rogueport Plaza", "Frankly's House", "Merlin's House"
-], None)
-rp.launch()
+                    new_room_key = self.destinations[dest_index]
+                    gm.room = gm.room_list[new_room_key]

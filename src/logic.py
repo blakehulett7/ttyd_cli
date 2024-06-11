@@ -13,7 +13,7 @@ class Game_Master:
     def initialize_rooms(self):
         self.room_list = {
             "Rogueport Plaza": Room("Rogueport Plaza", ["Rogueport East"], None),
-            "Rogueport East": Room()
+            "Rogueport East": Room("Rogueport East", ["Rogueport Plaza", "Frankly's House", "Merlin's House"], None)
 
         }
 
