@@ -10,7 +10,7 @@ class Room:
         if action == "1":
             self.navigation(gm)
         if action == "2":
-            print("\nNot Implemented Yet")
+            self.fight()
         if action == "3":
             self.tattle()
 
@@ -53,6 +53,31 @@ class Room:
                     dest_index = int(dest) - 1
                     new_room_key = self.destinations[dest_index]
                     gm.room = gm.room_list[new_room_key]
+
+    def fight(self):
+        valid_enemy = False
+        while not valid_enemy:
+            options = []
+            print("")
+            print("-----Fight-----")
+            i = 1
+            for enemy in self.enemies:
+                print(f"{i}. {enemy}")
+                options.append(f"{i}")
+                i += 1
+            options.append(f"{i}")
+            print(f"{i}. Go Back")
+            target = input("Who would you like to fight? ")
+            if target not in options:
+                input("\nInvalid destination, try again")
+            else:
+                valid_enemy = True
+                if target == options[-1]:
+                    print("")
+                else:
+                    enemy_index = int(target) - 1
+                    target_enemy = self.enemies[enemy_index]
+                    print(f"Call a battle on {target_enemy}")
 
     def tattle(self):
         print("\n" + self.desciption)
