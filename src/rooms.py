@@ -1,23 +1,26 @@
 class Room:
-    def __init__(self, name, desciption, destinations, enemies, enemy_formations):
+    def __init__(self, name, desciption, destinations, enemies, enemy_formations, special=None):
         self.name = name
         self.desciption = desciption
         self.destinations = destinations
         self.enemies = enemies
         self.enemies_backup = enemies
         self.enemy_formations = enemy_formations
+        self.special = special
 
     def launch(self, gm):
-        self.enemies = self.enemies_backup
-        action = self.action_menu()
-        if action == "1":
-            self.navigation(gm)
-        if action == "2":
-            self.fight()
-        if action == "3":
-            self.tattle()
-        if action == "4":
-            self.save()
+        if self.special is None:
+            action = self.action_menu()
+            if action == "1":
+                self.navigation(gm)
+            if action == "2":
+                self.fight()
+            if action == "3":
+                self.tattle()
+            if action == "4":
+                self.save()
+        else:
+            input("Special Room")
 
     def action_menu(self):
         valid_action = False
@@ -58,6 +61,7 @@ class Room:
                     dest_index = int(dest) - 1
                     new_room_key = self.destinations[dest_index]
                     gm.room = gm.room_list[new_room_key]
+                    self.enemies = self.enemies_backup
 
     def fight(self):
         if self.enemies is None or self.enemies == []:
