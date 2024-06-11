@@ -64,7 +64,7 @@ class Room:
                         input("\nNot Implemented Yet")
                     else:
                         gm.room = gm.room_list[new_room_key]
-                    self.enemies = self.enemies_backup
+                        self.enemies = self.enemies_backup
 
     def fight(self):
         if self.enemies is None or self.enemies == []:
