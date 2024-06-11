@@ -64,6 +64,7 @@ class Room:
                         input("\nNot Implemented Yet")
                     else:
                         gm.room = gm.room_list[new_room_key]
+                        input(f"\nEntering {gm.room.name}")
                         self.enemies = self.enemies_backup
 
     def fight(self):
