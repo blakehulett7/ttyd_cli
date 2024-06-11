@@ -1,5 +1,5 @@
 from graphics import text_formatter, Colors
-from battle_moves import body_slam
+from battle_moves import body_slam, headbonk, spin
 from logic import Mario, Enemy
 
 
@@ -53,3 +53,9 @@ def battle(mario, enemy_list):
             enemy.turn(mario)
 
         input()
+
+
+mario = Mario()
+goomba = Enemy("Goomba", 2, 0, [headbonk])
+spinia = Enemy("Spinia", 3, 0, [spin])
+battle(mario, [goomba, spinia])

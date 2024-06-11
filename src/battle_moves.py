@@ -18,9 +18,11 @@ class Enemy_Move:
 
     def battle(self, user, target):
         damage_calculation = self.damage - target.defense
-        print(f"{user.name} body slams {target.name} for {
+        print(f"{user.name} {self.name}s {target.name} for {
               damage_calculation} damage.")
         target.hp -= damage_calculation
 
 
 body_slam = Enemy_Move("Body Slam", 1, False)
+headbonk = Enemy_Move("Headbonk", 1)
+spin = Enemy_Move("Spin", 1)

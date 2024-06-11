@@ -8,6 +8,7 @@ class Room:
         self.enemy_formations = enemy_formations
 
     def launch(self, gm):
+        self.enemies = self.enemies_backup
         action = self.action_menu()
         if action == "1":
             self.navigation(gm)
@@ -57,7 +58,6 @@ class Room:
                     dest_index = int(dest) - 1
                     new_room_key = self.destinations[dest_index]
                     gm.room = gm.room_list[new_room_key]
-                    self.reset_enemies()
 
     def fight(self):
         if self.enemies is None or self.enemies == []:
@@ -92,6 +92,3 @@ class Room:
 
     def save(self):
         print("\nHA! There's no saving chump!")
-
-    def reset_enemies(self):
-        pass

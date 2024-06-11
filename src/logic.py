@@ -66,8 +66,7 @@ class Mario:
                         confirmed = True
                 if not go_back:
                     self.battle_hammer(enemy_list[0])
-        input()
-        print("end of Mario's turn")
+        input("\nend of Mario's turn")
 
     def target_selection(self, enemy_list):
         confirmed = False
@@ -105,14 +104,18 @@ class Mario:
         damage_calculation = self.jump.damage - target.defense
         input(f"\nMario jumps on {target.name} for {
               damage_calculation} damage")
-        print(f"Mario jumps on {target.name} for {damage_calculation} damage")
+        input(f"Mario jumps on {target.name} for {damage_calculation} damage")
         target.hp -= damage_calculation * 2
+        if target.hp <= 0:
+            input(f"\n{target.name} has been eliminated")
 
     def battle_hammer(self, target):
         damage_calculation = self.hammer.damage - target.defense
-        print(f"\nMario whacks {target.name} with a hammer for {
+        input(f"\nMario whacks {target.name} with a hammer for {
               damage_calculation} damage.")
         target.hp -= damage_calculation
+        if target.hp <= 0:
+            input(f"\n{target.name} has been eliminated")
 
     # Only ever used in the opening Crump Fight
     def opening_tutorial_turn(self, used_moves, enemy_list):
