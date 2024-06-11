@@ -1,26 +1,22 @@
 class Room:
-    def __init__(self, name, desciption, destinations, enemies, enemy_formations, special=None):
+    def __init__(self, name, desciption, destinations, enemies, enemy_formations):
         self.name = name
         self.desciption = desciption
         self.destinations = destinations
         self.enemies = enemies
         self.enemies_backup = enemies
         self.enemy_formations = enemy_formations
-        self.special = special
 
     def launch(self, gm):
-        if self.special is None:
-            action = self.action_menu()
-            if action == "1":
-                self.navigation(gm)
-            if action == "2":
-                self.fight()
-            if action == "3":
-                self.tattle()
-            if action == "4":
-                self.save()
-        else:
-            input("Special Room")
+        action = self.action_menu()
+        if action == "1":
+            self.navigation(gm)
+        if action == "2":
+            self.fight()
+        if action == "3":
+            self.tattle()
+        if action == "4":
+            self.save()
 
     def action_menu(self):
         valid_action = False
@@ -100,3 +96,8 @@ class Room:
 
     def save(self):
         print("\nHA! There's no saving chump!")
+
+
+class Special_Room:
+    def __init__(self):
+        pass
