@@ -1,6 +1,7 @@
 class Room:
-    def __init__(self, name, destinations, enemies):
+    def __init__(self, name, desciption, destinations, enemies):
         self.name = name
+        self.desciption = desciption
         self.destinations = destinations
         self.enemies = enemies
 
@@ -10,6 +11,8 @@ class Room:
             self.navigation(gm)
         if action == "2":
             print("\nNot Implemented Yet")
+        if action == "3":
+            self.tattle()
 
     def action_menu(self):
         valid_action = False
@@ -50,3 +53,6 @@ class Room:
                     dest_index = int(dest) - 1
                     new_room_key = self.destinations[dest_index]
                     gm.room = gm.room_list[new_room_key]
+
+    def tattle(self):
+        print("\n" + self.desciption)
