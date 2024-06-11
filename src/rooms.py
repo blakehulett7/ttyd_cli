@@ -60,7 +60,10 @@ class Room:
                 else:
                     dest_index = int(dest) - 1
                     new_room_key = self.destinations[dest_index]
-                    gm.room = gm.room_list[new_room_key]
+                    if new_room_key not in gm.room_list:
+                        input("\nNot Implemented Yet")
+                    else:
+                        gm.room = gm.room_list[new_room_key]
                     self.enemies = self.enemies_backup
 
     def fight(self):
