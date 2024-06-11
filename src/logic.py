@@ -6,11 +6,10 @@ from battle_moves import Move
 
 class Game_Master:
     def __init__(self):
+        self.mario = Mario()
         self.room = "Rogueport Docks"
         self.gamestate = 1
         self.zess_t = False
-
-    def initialize_rooms(self):
         self.room_list = {
             "Rogueport Plaza": Room("Rogueport Plaza", "rp_tattle", ["Rogueport East"], ["Goomba", "Koopa"]),
             "Rogueport East": Room("Rogueport East", "re_tattle", ["Rogueport Plaza", "Frankly's House", "Merlin's House"], None)

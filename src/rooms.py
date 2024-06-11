@@ -13,6 +13,8 @@ class Room:
             self.fight()
         if action == "3":
             self.tattle()
+        if action == "4":
+            self.save()
 
     def action_menu(self):
         valid_action = False
@@ -53,6 +55,7 @@ class Room:
                     dest_index = int(dest) - 1
                     new_room_key = self.destinations[dest_index]
                     gm.room = gm.room_list[new_room_key]
+                    self.reset_enemies()
 
     def fight(self):
         valid_enemy = False
@@ -81,3 +84,9 @@ class Room:
 
     def tattle(self):
         print("\n" + self.desciption)
+
+    def save(self):
+        print("\nHA! There's no saving chump!")
+
+    def reset_enemies(self):
+        pass

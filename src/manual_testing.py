@@ -6,7 +6,6 @@ from battle_moves import Enemy_Move
 
 def main():
     gm = Game_Master()
-    gm.initialize_rooms()
     gm.room = gm.room_list["Rogueport Plaza"]
     running = True
     while running:

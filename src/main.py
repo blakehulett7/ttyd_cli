@@ -8,7 +8,6 @@ from rooms import Room
 
 def main():
     gm = Game_Master()
-    gm.initialize_rooms()
     # Rogueport Docks
     opening_sequence()
     action_menu_opener()
