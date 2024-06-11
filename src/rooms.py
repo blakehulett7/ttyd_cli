@@ -101,3 +101,6 @@ class Room:
 class Special_Room:
     def __init__(self):
         pass
+
+    def launch(self):
+        pass
