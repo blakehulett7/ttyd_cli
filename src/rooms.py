@@ -1,7 +1,7 @@
 class Room:
-    def __init__(self, name, desciption, destinations, enemies, enemy_formations):
+    def __init__(self, name, description, destinations, enemies, enemy_formations):
         self.name = name
-        self.desciption = desciption
+        self.description = description
         self.destinations = destinations
         self.enemies = enemies
         self.enemies_backup = enemies
@@ -92,7 +92,7 @@ class Room:
                     print(f"Call a battle on {target_enemy}")
 
     def tattle(self):
-        print("\n" + self.desciption)
+        print("\n" + self.description)
 
     def save(self):
         print("\nHA! There's no saving chump!")
