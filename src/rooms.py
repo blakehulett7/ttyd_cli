@@ -65,7 +65,7 @@ class Room:
 
     def fight(self):
         if self.enemies is None or self.enemies == []:
-            print("\nNo enemies to fight")
+            input("\nNo enemies to fight")
             return
         valid_enemy = False
         while not valid_enemy:
@@ -92,15 +92,16 @@ class Room:
                     print(f"Call a battle on {target_enemy}")
 
     def tattle(self):
-        print("\n" + self.description)
+        input("\n" + self.description)
 
     def save(self):
-        print("\nHA! There's no saving chump!")
+        input("\nHA! There's no saving chump!")
 
 
-class Special_Room:
-    def __init__(self):
-        pass
+class Shop_Room:
+    def __init__(self, name, description):
+        self.name = name
+        self.description = description
 
     def launch(self):
         pass
