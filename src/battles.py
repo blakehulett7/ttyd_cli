@@ -1,6 +1,7 @@
 from graphics import text_formatter, Colors
 from battle_moves import body_slam, headbonk, spin
-from logic import Mario, Enemy
+from mario import Mario
+from enemies import Enemy
 
 
 def crump_opener(mario, crump):

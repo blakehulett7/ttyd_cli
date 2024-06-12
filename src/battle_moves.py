@@ -25,4 +25,6 @@ class Enemy_Move:
 
 body_slam = Enemy_Move("Body Slam", 1, False)
 headbonk = Enemy_Move("Headbonk", 1)
+spikebonk = Enemy_Move("Spikebonk", 2)
+dive = Enemy_Move("Dive", 1)
 spin = Enemy_Move("Spin", 1)
