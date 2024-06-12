@@ -10,6 +10,7 @@ def main():
     gm.room = gm.room_list["Rogueport East"]
     running = True
     while running:
+        gm.check_special()
         gm.room.launch(gm)
 
 

@@ -23,8 +23,10 @@ class Game_Master:
         }
 
     def check_special(self):
-        if self.gamestate == 3 and self.room == "Rogueport Sewers":
+        print(self.gamestate, self.room)
+        if self.gamestate == 3 and self.room == self.room_list["Rogueport Sewers"]:
             input("\nGoomba Bros Fight")
+            self.gamestate += 1
 
 
 class Mario:

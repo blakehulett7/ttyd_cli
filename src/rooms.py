@@ -7,6 +7,9 @@ class Room:
         self.enemies_backup = enemies
         self.enemy_formations = enemy_formations
 
+    def __repr__(self):
+        return f"{self.name}"
+
     def launch(self, gm):
         action = self.action_menu()
         if action == "1":
@@ -58,7 +61,6 @@ class Room:
                     new_room_key = self.destinations[dest_index]
                     if "Pipe to" in new_room_key:
                         new_room_key = new_room_key.replace("Pipe to ", "")
-                        print(new_room_key)
                     if new_room_key not in gm.room_list:
                         input("\nNot Implemented Yet")
                     else:
@@ -134,6 +136,9 @@ class Franklys_House:
     def __init__(self):
         self.name = "Frankly's House"
         self.dialogue_list = ["frankly intro dialogue"]
+
+    def __repr__(self):
+        return f"{self.name}"
 
     def launch(self, gm):
         if gm.gamestate == 2:
