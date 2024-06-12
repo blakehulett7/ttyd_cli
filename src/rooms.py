@@ -109,7 +109,39 @@ class Shop_Room:
 
 
 class Dialogue_Room:
-    def __init__(self, name, description, character):
+    def __init__(self, name, character, dialogue_list, adjacent_room):
         self.name = name
-        self.description = description
         self.character = character
+        self.adjacent_room = adjacent_room
+        self.dialogue_list = dialogue_list
+        self.counter = 0
+
+    def launch(self, gm):
+        dialogue = self.dialogue_list[self.counter]
+        input("\n" + dialogue)
+        if self.counter == 0:
+            self.counter += 1
+        gm.room = gm.room_list[self.adjacent_room]
+
+    def increment_counter(self):
+        self.counter += 1
+
+
+class Franklys_House:
+    def __init__(self):
+        self.name = "Frankly's House"
+        self.dialogue_list = ["frankly intro dialogue"]
+
+    def launch(self, gm):
+        if gm.gamestate == 2:
+            input("\n" + self.dialogue_list[0])
+            input("\nProfessor Frankly has joined your party!")
+            input("\nFrankly gate unlock dialogue")
+            input("\nRogueport Sewer pipe unlocked!")
+            gm.gamestate += 1
+            print(gm.gamestate)
+        elif gm.gamestate == 3:
+            input("\nProfessor Frankly: No time to dawdle, let's head through the pipe!")
+        else:
+            input("\nGamestate Error")
+        gm.room = gm.room_list["Rogueport East"]

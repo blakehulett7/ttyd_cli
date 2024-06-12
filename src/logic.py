@@ -1,5 +1,5 @@
 import random
-from rooms import Room
+from rooms import Room, Dialogue_Room, Franklys_House
 from graphics import Colors
 from battle_moves import Move
 
@@ -12,8 +12,8 @@ class Game_Master:
         self.zess_t = False
         self.room_list = {
             "Rogueport Plaza": Room("Rogueport Plaza", "rp_tattle", ["Rogueport East"], None, None),
-            "Rogueport East": Room("Rogueport East", "re_tattle", ["Rogueport Plaza", "Frankly's House", "Merlin's House"], None, None)
-
+            "Rogueport East": Room("Rogueport East", "re_tattle", ["Rogueport Plaza", "Frankly's House", "Merlin's House", "Ishnail Terriory"], None, None),
+            "Frankly's House": Franklys_House()
         }
 
 
