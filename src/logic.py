@@ -12,9 +12,18 @@ class Game_Master:
         self.zess_t = False
         self.room_list = {
             "Rogueport Plaza": Room("Rogueport Plaza", "rp_tattle", ["Rogueport East"], None, None),
-            "Rogueport East": Room("Rogueport East", "re_tattle", ["Rogueport Plaza", "Frankly's House", "Merlin's House", "Ishnail Terriory"], None, None),
-            "Frankly's House": Franklys_House()
+            "Rogueport East": Room("Rogueport East", "re_tattle", [
+                "Rogueport Plaza",
+                "Frankly's House",
+                "Merlin's House",
+                "Ishnail Terriory",
+                "Locked Gate"], None, None),
+            "Frankly's House": Franklys_House(),
+            "Rogueport Sewers": Room("Rogueport Sewers", "rs_tattle")
         }
+
+    def check_special(self):
+        pass
 
 
 class Mario:
