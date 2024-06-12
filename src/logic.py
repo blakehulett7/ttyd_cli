@@ -19,11 +19,12 @@ class Game_Master:
                 "Ishnail Terriory",
                 "Locked Gate"], None, None),
             "Frankly's House": Franklys_House(),
-            "Rogueport Sewers": Room("Rogueport Sewers", "rs_tattle")
+            "Rogueport Sewers": Room("Rogueport Sewers", "rs_tattle", ["d1", "d2", "pipe"], None, None)
         }
 
     def check_special(self):
-        pass
+        if self.gamestate == 3 and self.room == "Rogueport Sewers":
+            input("\nGoomba Bros Fight")
 
 
 class Mario:

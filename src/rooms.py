@@ -56,6 +56,9 @@ class Room:
                 else:
                     dest_index = int(dest) - 1
                     new_room_key = self.destinations[dest_index]
+                    if "Pipe to" in new_room_key:
+                        new_room_key = new_room_key.replace("Pipe to ", "")
+                        print(new_room_key)
                     if new_room_key not in gm.room_list:
                         input("\nNot Implemented Yet")
                     else:
