@@ -99,9 +99,17 @@ class Room:
 
 
 class Shop_Room:
-    def __init__(self, name, description):
+    def __init__(self, name, description, items):
         self.name = name
         self.description = description
+        self.items = items
 
     def launch(self):
         pass
+
+
+class Dialogue_Room:
+    def __init__(self, name, description, character):
+        self.name = name
+        self.description = description
+        self.character = character
