@@ -85,13 +85,19 @@ class Mario:
         return result
 
     def battle_jump(self, target):
-        damage_calculation = self.jump.damage - target.defense
-        input(f"\nMario jumps on {target.name} for {
-              damage_calculation} damage")
-        input(f"Mario jumps on {target.name} for {damage_calculation} damage")
-        target.hp -= damage_calculation * 2
-        if target.hp <= 0:
-            input(f"\n{target.name} has been eliminated")
+        if target.special == "spike":
+            input(f"\nMario jumps on {target.name}...")
+            input("and lands right on the spike taking 1 damage to himself!")
+            self.hp -= 1
+        else:
+            damage_calculation = self.jump.damage - target.defense
+            input(f"\nMario jumps on {target.name} for {
+                damage_calculation} damage")
+            input(f"Mario jumps on {target.name} for {
+                  damage_calculation} damage")
+            target.hp -= damage_calculation * 2
+            if target.hp <= 0:
+                input(f"\n{target.name} has been eliminated")
 
     def battle_hammer(self, target):
         damage_calculation = self.hammer.damage - target.defense
