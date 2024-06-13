@@ -14,6 +14,9 @@ class Room:
     def __repr__(self):
         return f"{self.name}"
 
+    def check_gamestate(self, gm):
+        pass
+
     def launch(self, gm):
         action = self.action_menu()
         if action == "1":
@@ -186,6 +189,23 @@ class Rogueport_Sewers_Entrance(Room):
             enemies = [goomba, spiky_goomba, paragoomba]
             battle(gm.mario, gm.partners, enemies)
             gm.gamestate += 1
+
+
+class Rogueport_Sewers_East_Corridor(Room):
+    def __init__(self):
+        self.name = "Rogueport Sewers: East Corridor"
+        self.description = "rse_tattle"
+        self.destinations = ["Pipe to Entrance", "Pipe to Lower Corridor"]
+        self.enemies = ["Goomba", "Spiky Goomba", "Paragoomba"]
+        self.enemies_backup = ["Goomba", "Spiky Goomba", "Paragoomba"]
+        self.enemy_formations = {
+            "Goomba": [goomba],
+            "Spiky Goomba": [spiky_goomba],
+            "Paragoomba": [paragoomba]
+        }
+
+    def check_gamestate(self, gm):
+        pass
 
 
 class Franklys_House:

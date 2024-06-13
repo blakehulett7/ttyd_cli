@@ -8,7 +8,7 @@ from partners import Goombella
 def main():
     gm = Game_Master()
     gm.partners.append(Goombella())
-    gm.gamestate = 3
+    gm.gamestate = 4
     gm.room = gm.room_list["Rogueport Sewers"]
     running = True
     while running:
