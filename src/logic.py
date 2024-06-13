@@ -1,6 +1,6 @@
 from mario import Mario
 from enemies import Enemy
-from rooms import Room, Rogueport_Plaza, Rogueport_East, Franklys_House, Rogueport_Sewers_Entrance, Rogueport_Sewers_East_Corridor
+from rooms import Room, Rogueport_Plaza, Rogueport_East, Franklys_House, Rogueport_Sewers_Entrance, Rogueport_Sewers_East_Corridor, Rogueport_Sewers_Lower_Corridor
 from battle_moves import headbonk, spikebonk, dive
 from battles import battle
 
@@ -18,7 +18,8 @@ class Game_Master:
             "Frankly's House": Franklys_House(),
             "Rogueport Sewers": Rogueport_Sewers_Entrance(),
             "Entrance": Rogueport_Sewers_Entrance(),
-            "East Corridor": Rogueport_Sewers_East_Corridor()
+            "East Corridor": Rogueport_Sewers_East_Corridor(),
+            "Lower Corridor": Rogueport_Sewers_Lower_Corridor()
         }
 
     def check_special(self):

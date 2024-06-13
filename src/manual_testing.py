@@ -9,7 +9,7 @@ def main():
     gm = Game_Master()
     gm.partners.append(Goombella())
     gm.gamestate = 4
-    gm.room = gm.room_list["East Corridor"]
+    gm.room = gm.room_list["Lower Corridor"]
     running = True
     while running:
         gm.check_special()

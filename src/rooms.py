@@ -1,4 +1,5 @@
-from enemies import goomba, spiky_goomba, paragoomba
+import random
+from enemies import goomba, spiky_goomba, paragoomba, spinia
 from battles import battle
 
 
@@ -216,6 +217,26 @@ class Rogueport_Sewers_East_Corridor(Room):
 
 
 class Rogueport_Sewers_Lower_Corridor(Room):
+    def __init__(self):
+        self.name = "Rogueport Sewers: Lower Corridor"
+        self.description = "rsl_tattle"
+        self.destinations = ["Pipe to East Corridor", "Suspicious Doorway"]
+        self.enemies = ["Spinia", "Spinia"]
+        self.enemies_backup = ["Spinia", "Spinia"]
+        self.enemy_formations = {"Spinia": self.pick_formation}
+
+    def check_gamestate(self, gm):
+        pass
+
+    def pick_formation(self):
+        possible_formations = [
+            [spinia],
+            [spinia, spinia],
+            [spinia, spinia, spinia],
+            [spinia, spinia, spinia, spinia]
+        ]
+        index = random.randint(0, 3)
+        return possible_formations[index]
 
 
 class Franklys_House:

@@ -6,6 +6,7 @@ class Mario:
     def __init__(self):
         self.name = "Mario"
         self.star_points = 0
+        self.paper_mode = []
         self.hp = 10
         self.fp = 5
         self.bp = 3

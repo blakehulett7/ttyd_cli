@@ -1,5 +1,5 @@
 import random
-from battle_moves import headbonk, spikebonk, dive
+from battle_moves import headbonk, spikebonk, dive, spin
 
 
 class Enemy:
@@ -25,3 +25,4 @@ class Enemy:
 goomba = Enemy("Goomba", 2, 1, 0, [headbonk])
 spiky_goomba = Enemy("Spiky Goomba", 2, 2, 0, [spikebonk], "spike")
 paragoomba = Enemy("Paragoomba", 2, 1, 0, [dive], "wings")
+spinia = Enemy("Spinia", 3, 1, 0, [spin])
