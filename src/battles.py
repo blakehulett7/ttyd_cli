@@ -51,14 +51,14 @@ def battle(mario, partner_list, enemy_list):
         if selected_partner.hp > 0:
             valid_formation = False
             while not valid_formation:
-                print("--Your Turn--")
+                print("\n--Your Turn--")
                 print("1. Mario")
                 print(f"2. {selected_partner.name}")
                 answer = input("Who would you like to go first? ")
                 if answer == "1":
                     formation = [mario, selected_partner]
                     valid_formation = True
-                if answer == "2":
+                elif answer == "2":
                     formation = [selected_partner, mario]
                     valid_formation = True
                 else:
@@ -71,6 +71,12 @@ def battle(mario, partner_list, enemy_list):
                 remove_dead_enemies(enemy_list)
         for enemy in enemy_list:
             enemy.turn(mario)
+    if enemy_list == []:
+        input("\nVictory!")
+        return True
+    if mario.hp <= 0:
+        input("\nGame Over")
+        return False
 
         input()
 

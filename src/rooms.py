@@ -15,14 +15,14 @@ class Room:
         return f"{self.name}"
 
     def check_gamestate(self, gm):
-        pass
+        self.enemies = self.enemies_backup
 
     def launch(self, gm):
         action = self.action_menu()
         if action == "1":
             self.navigation(gm)
         if action == "2":
-            self.fight()
+            self.fight(gm)
         if action == "3":
             self.tattle()
         if action == "4":
@@ -75,10 +75,11 @@ class Room:
                         input(f"\nEntering {gm.room.name}")
                         self.enemies = self.enemies_backup
 
-    def fight(self):
+    def fight(self, gm):
         if self.enemies is None or self.enemies == []:
             input("\nNo enemies to fight")
             return
+        go_back = False
         valid_enemy = False
         while not valid_enemy:
             options = []
@@ -97,11 +98,17 @@ class Room:
             else:
                 valid_enemy = True
                 if target == options[-1]:
+                    go_back = True
                     print("")
                 else:
                     enemy_index = int(target) - 1
                     target_enemy = self.enemies[enemy_index]
-                    print(f"Call a battle on {target_enemy}")
+                    print(f"\nCall a battle on {target_enemy}")
+                    victory = battle(gm.mario, gm.partners,
+                                     self.enemy_formations[target_enemy])
+        if not go_back:
+            if victory:
+                self.enemies.remove(target_enemy)
 
     def tattle(self):
         input("\n" + self.description)

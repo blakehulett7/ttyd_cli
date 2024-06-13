@@ -9,7 +9,7 @@ def main():
     gm = Game_Master()
     gm.partners.append(Goombella())
     gm.gamestate = 4
-    gm.room = gm.room_list["Rogueport Sewers"]
+    gm.room = gm.room_list["East Corridor"]
     running = True
     while running:
         gm.check_special()
