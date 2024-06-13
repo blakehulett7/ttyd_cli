@@ -8,6 +8,7 @@ from battles import battle
 class Game_Master:
     def __init__(self):
         self.mario = Mario()
+        self.partners = []
         self.room = "Rogueport Docks"
         self.gamestate = 1
         self.zess_t = False
@@ -20,7 +21,3 @@ class Game_Master:
 
     def check_special(self):
         print("\n", self.gamestate, self.room)
-
-
-def tattle(room):
-    print(f"\n{room} Tattle")

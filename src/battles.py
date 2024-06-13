@@ -38,19 +38,28 @@ def crump_opener(mario, crump):
         input()
 
 
-def battle(mario, enemy_list):
+def battle(mario, partner_list, enemy_list):
     print(Colors.reset)
     while mario.hp > 0 and enemy_list != []:
         print(mario)
+        print(partner_list[0])
+        print("--------------------------")
         for enemy in enemy_list:
             print(enemy)
         input()
         mario.turn(enemy_list)
-        input()
-        for enemy in enemy_list:
-            if enemy.hp <= 0:
-                enemy_list.remove(enemy)
+        remove_dead_enemies(enemy_list)
+        selected_partner = partner_list[0]
+        if selected_partner.hp > 0 and enemy_list != []:
+            selected_partner.turn(enemy_list)
+        remove_dead_enemies(enemy_list)
         for enemy in enemy_list:
             enemy.turn(mario)
 
         input()
+
+
+def remove_dead_enemies(enemy_list):
+    for enemy in enemy_list:
+        if enemy.hp <= 0:
+            enemy_list.remove(enemy)

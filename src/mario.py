@@ -16,7 +16,7 @@ class Mario:
         self.moves_list = [self.jump, self.hammer]
 
     def __repr__(self):
-        return f"(Mario, {self.hp} hp, {self.fp} fp, {self.bp} bp)"
+        return f"Mario, {self.hp} hp, {self.fp} fp, {self.bp} bp"
 
     def turn(self, enemy_list):
         go_back = True

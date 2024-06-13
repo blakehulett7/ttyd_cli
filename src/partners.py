@@ -1,4 +1,7 @@
 class Partner:
+    def __repr__(self):
+        return f"{self.name}, {self.hp} hp, {self.attack} attack, {self.defense} defense"
+
     def target_selection(self, enemy_list):
         confirmed = False
         while not confirmed:
@@ -47,10 +50,10 @@ class Goombella(Partner):
             command = "None"
             while not command.isdigit() or int(command) not in [i for i in range(1, len(enemy_list) + 2)]:
                 print("")
-                print("-----Mario's Turn-----")
+                print("-----Goombella's Turn-----")
                 for move in self.moves_list:
                     i = self.moves_list.index(move) + 1
-                    print(f"{i}. {move.name}")
+                    print(f"{i}. {move}")
                 print("")
                 command = input("Choose an action: ")
             if int(command) == 1:

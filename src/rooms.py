@@ -184,7 +184,7 @@ class Rogueport_Sewers_Entrance(Room):
         if gm.gamestate == 3:
             input("\nGoomba Bros Fight")
             enemies = [goomba, spiky_goomba, paragoomba]
-            battle(gm.mario, enemies)
+            battle(gm.mario, gm.partners, enemies)
             gm.gamestate += 1
 
 
