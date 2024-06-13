@@ -133,16 +133,31 @@ class Dialogue_Room:
 
 
 class Rogueport_Plaza(Room):
-    def __init__(self, name, description, destinations, enemies, enemy_formations):
-        super().__init__(name, description, destinations, enemies, enemy_formations)
+    def __init__(self):
+        self.name = "Rogueport Plaza"
+        self.description = "re_tattle"
+        self.destinations = ["Rogueport East"]
+        self.enemies = None
+        self.enemies_backup = None
+        self.enemy_formations = None
 
     def check_gamestate(self, gm):
         pass
 
 
 class Rogueport_East(Room):
-    def __init__(self, name, description, destinations, enemies, enemy_formations):
-        super().__init__(name, description, destinations, enemies, enemy_formations)
+    def __init__(self):
+        self.name = "Rogueport East"
+        self.description = "re_tattle"
+        self.destinations = [
+            "Rogueport Plaza",
+            "Frankly's House",
+            "Merlin's House",
+            "Ishnail Terriory",
+            "Locked Gate"]
+        self.enemies = None
+        self.enemies_backup = None
+        self.enemy_formations = None
 
     def check_gamestate(self, gm):
         if gm.gamestate >= 3:

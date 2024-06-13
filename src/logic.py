@@ -12,13 +12,8 @@ class Game_Master:
         self.gamestate = 1
         self.zess_t = False
         self.room_list = {
-            "Rogueport Plaza": Rogueport_Plaza("Rogueport Plaza", "rp_tattle", ["Rogueport East"], None, None),
-            "Rogueport East": Rogueport_East("Rogueport East", "re_tattle", [
-                "Rogueport Plaza",
-                "Frankly's House",
-                "Merlin's House",
-                "Ishnail Terriory",
-                "Locked Gate"], None, None),
+            "Rogueport Plaza": Rogueport_Plaza(),
+            "Rogueport East": Rogueport_East(),
             "Frankly's House": Franklys_House(),
             "Rogueport Sewers": Room("Rogueport Sewers: Entrance", "rs_tattle", [
                 "Underground Town",
