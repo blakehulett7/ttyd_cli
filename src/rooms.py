@@ -223,7 +223,7 @@ class Rogueport_Sewers_Lower_Corridor(Room):
         self.destinations = ["Pipe to East Corridor", "Suspicious Doorway"]
         self.enemies = ["Spinia", "Spinia"]
         self.enemies_backup = ["Spinia", "Spinia"]
-        self.enemy_formations = {"Spinia": self.pick_formation}
+        self.enemy_formations = {"Spinia": self.pick_formation()}
 
     def check_gamestate(self, gm):
         pass
