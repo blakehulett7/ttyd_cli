@@ -7,7 +7,7 @@ from battle_moves import Enemy_Move
 def main():
     gm = Game_Master()
     gm.gamestate = 3
-    gm.room = gm.room_list["Rogueport East"]
+    gm.room = gm.room_list["Rogueport Sewers"]
     running = True
     while running:
         gm.check_special()

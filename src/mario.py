@@ -1,4 +1,5 @@
 from battle_moves import Move
+from graphics import Colors
 
 
 class Mario:
@@ -41,12 +42,22 @@ class Mario:
                 confirmed = False
                 while not confirmed:
                     print("\nYou've selected hammer!")
-                    answer = input(f"You will target {
-                        enemy_list[0].name}, is this ok? (Y/n): ")
-                    if answer in ["N", "n"]:
+                    target = None
+                    for enemy in enemy_list:
+                        if enemy.special != "wings":
+                            target = enemy
+                            break
+                        input("No enemies to hammer!")
+                    if target:
+                        answer = input(f"You will target {
+                            target.name}, is this ok? (Y/n): ")
+                        if answer in ["N", "n"]:
+                            go_back = True
+                            confirmed = True
+                        if answer in ["Y", "y"]:
+                            confirmed = True
+                    else:
                         go_back = True
-                        confirmed = True
-                    if answer in ["Y", "y"]:
                         confirmed = True
                 if not go_back:
                     self.battle_hammer(enemy_list[0])
@@ -158,4 +169,3 @@ class Mario:
         input()
         print("end of Mario's turn")
         return move
-
