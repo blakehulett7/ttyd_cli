@@ -1,4 +1,5 @@
 import random
+from battle_moves import headbonk, spikebonk, dive
 
 
 class Enemy:
@@ -20,3 +21,8 @@ class Enemy:
         selected_move.battle(self, target)
         input()
         print(f"end of {self.name}'s turn")
+
+
+goomba = Enemy("Goomba", 2, 0, [headbonk])
+spiky_goomba = Enemy("Spiky Goomba", 2, 0, [spikebonk], "spike")
+paragoomba = Enemy("Paragoomba", 2, 0, [dive], "wings")

@@ -1,3 +1,6 @@
+from enemies import goomba, spiky_goomba, paragoomba
+
+
 class Room:
     def __init__(self, name, description, destinations, enemies, enemy_formations):
         self.name = name
@@ -163,6 +166,25 @@ class Rogueport_East(Room):
         if gm.gamestate >= 3:
             self.destinations.remove("Locked Gate")
             self.destinations.append("Pipe to Rogueport Sewers")
+
+
+class Rogueport_Sewers_Entrance(Room):
+    def __init__(self):
+        self.name = "Rogueport Sewers Entrance"
+        self.description = "rs_tattle"
+        self.destinations = [
+            "Underground Town",
+            "Pipe to East Corridor"]
+        self.enemies = None
+        self.enemies_backup = [spiky_goomba]
+        self.enemy_formations = {spiky_goomba: [spiky_goomba, spiky_goomba]}
+
+    def check_gamestate(self, gm):
+        if gm.gamestate == 4:
+            input("\nGoomba Bros Fight")
+            enemies = [goomba, spiky_goomba, paragoomba]
+            battle(self.mario, enemies)
+            self.gamestate += 1
 
 
 class Franklys_House:
