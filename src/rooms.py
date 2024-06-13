@@ -226,7 +226,9 @@ class Rogueport_Sewers_Lower_Corridor(Room):
         self.enemy_formations = {"Spinia": self.pick_formation()}
 
     def check_gamestate(self, gm):
-        pass
+        self.enemies = self.enemies_backup
+        input("\nUpon entering the room, a small grey creature notices you...")
+        input("\nIt panics and crawls into a crack in the wall.")
 
     def pick_formation(self):
         possible_formations = [
