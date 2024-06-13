@@ -132,6 +132,10 @@ class Dialogue_Room:
         self.counter += 1
 
 
+class Rogueport_Plaza(Room):
+    def __init__
+
+
 class Franklys_House:
     def __init__(self):
         self.name = "Frankly's House"
