@@ -215,6 +215,9 @@ class Rogueport_Sewers_East_Corridor(Room):
         pass
 
 
+class Rogueport_Sewers_Lower_Corridor(Room):
+
+
 class Franklys_House:
     def __init__(self):
         self.name = "Frankly's House"
