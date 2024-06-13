@@ -3,9 +3,10 @@ from battle_moves import headbonk, spikebonk, dive
 
 
 class Enemy:
-    def __init__(self, name, hp, defense, moves_list, special=None):
+    def __init__(self, name, hp, attack, defense, moves_list, special=None):
         self.name = name
         self.hp = hp
+        self.attack = attack
         self.defense = defense
         self.moves_list = moves_list
         self.special = special
@@ -23,6 +24,6 @@ class Enemy:
         print(f"end of {self.name}'s turn")
 
 
-goomba = Enemy("Goomba", 2, 0, [headbonk])
-spiky_goomba = Enemy("Spiky Goomba", 2, 0, [spikebonk], "spike")
-paragoomba = Enemy("Paragoomba", 2, 0, [dive], "wings")
+goomba = Enemy("Goomba", 2, 1, 0, [headbonk])
+spiky_goomba = Enemy("Spiky Goomba", 2, 2, 0, [spikebonk], "spike")
+paragoomba = Enemy("Paragoomba", 2, 1, 0, [dive], "wings")

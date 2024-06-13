@@ -47,7 +47,7 @@ class Mario:
                         if enemy.special != "wings":
                             target = enemy
                             break
-                        input("No enemies to hammer!")
+                        input("\nNo enemies to hammer")
                     if target:
                         answer = input(f"You will target {
                             target.name}, is this ok? (Y/n): ")

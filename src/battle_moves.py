@@ -22,7 +22,10 @@ class Enemy_Move:
               damage_calculation} damage.")
         target.hp -= damage_calculation
 
+# Partner Moves
 
+
+# Enemy Moves
 body_slam = Enemy_Move("Body Slam", 1, False)
 headbonk = Enemy_Move("Headbonk", 1)
 spikebonk = Enemy_Move("Spikebonk", 2)
