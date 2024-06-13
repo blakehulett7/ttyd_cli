@@ -48,11 +48,27 @@ def battle(mario, partner_list, enemy_list):
             print(enemy)
         input()
         selected_partner = partner_list[0]
-        mario.turn(enemy_list)
-        remove_dead_enemies(enemy_list)
-        if selected_partner.hp > 0 and enemy_list != []:
-            selected_partner.turn(enemy_list)
-        remove_dead_enemies(enemy_list)
+        if selected_partner.hp > 0:
+            valid_formation = False
+            while not valid_formation:
+                print("--Your Turn--")
+                print("1. Mario")
+                print(f"2. {selected_partner.name}")
+                answer = input("Who would you like to go first? ")
+                if answer == "1":
+                    formation = [mario, selected_partner]
+                    valid_formation = True
+                if answer == "2":
+                    formation = [selected_partner, mario]
+                    valid_formation = True
+                else:
+                    input("\nInvalid selection, try again")
+        else:
+            formation = [mario]
+        for good_guy in formation:
+            if enemy_list != []:
+                good_guy.turn(enemy_list)
+                remove_dead_enemies(enemy_list)
         for enemy in enemy_list:
             enemy.turn(mario)
 

@@ -29,7 +29,6 @@ class Mario:
                 for move in self.moves_list:
                     i = self.moves_list.index(move) + 1
                     print(f"{i}. {move.name}")
-                print(f"{i}. Tactics")
                 print("")
                 command = input("Choose an action: ")
             if int(command) == 1:
