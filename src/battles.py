@@ -47,9 +47,9 @@ def battle(mario, partner_list, enemy_list):
         for enemy in enemy_list:
             print(enemy)
         input()
+        selected_partner = partner_list[0]
         mario.turn(enemy_list)
         remove_dead_enemies(enemy_list)
-        selected_partner = partner_list[0]
         if selected_partner.hp > 0 and enemy_list != []:
             selected_partner.turn(enemy_list)
         remove_dead_enemies(enemy_list)
