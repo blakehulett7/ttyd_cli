@@ -20,20 +20,31 @@ class Game_Master:
                 "Ishnail Terriory",
                 "Locked Gate"], None, None),
             "Frankly's House": Franklys_House(),
-            "Rogueport Sewers": Room("Rogueport Sewers", "rs_tattle", ["d1", "d2", "pipe"], None, None)
+            "Rogueport Sewers": Room("Rogueport Sewers: Entrance", "rs_tattle", [
+                "Underground Town",
+                "Pipe to East Corridor",
+                "pipe"], None, None)
         }
 
     def check_special(self):
         print(self.gamestate, self.room)
-        if self.gamestate == 3 and self.room == self.room_list["Rogueport Sewers"]:
-            input("\nGoomba Bros Fight")
-            enemies = [
-                Enemy("Goomba", 2, 0, [headbonk]),
-                Enemy("Spiky Goomba", 2, 0, [spikebonk], "spike"),
-                Enemy("Paragoomba", 2, 0, [dive], "wings")
-            ]
-            battle(self.mario, enemies)
-            self.gamestate += 1
+        if self.gamestate == 3:
+            if self.room == self.room_list["Rogueport East"]:
+                rogueport_east = self.room_list["Rogueport East"]
+                rogueport_east.destinations.remove("Locked Gate")
+                rogueport_east.destinations.append("Pipe to Rogueport Sewers")
+                self.room_list["Rogueport East"] = rogueport_east
+                self.gamestate += 1
+        if self.gamestate == 4:
+            if self.room == self.room_list["Rogueport Sewers"]:
+                input("\nGoomba Bros Fight")
+                enemies = [
+                    Enemy("Goomba", 2, 0, [headbonk]),
+                    Enemy("Spiky Goomba", 2, 0, [spikebonk], "spike"),
+                    Enemy("Paragoomba", 2, 0, [dive], "wings")
+                ]
+                battle(self.mario, enemies)
+                self.gamestate += 1
 
 
 def tattle(room):

@@ -146,12 +146,8 @@ class Franklys_House:
             input("\nProfessor Frankly has joined your party!")
             input("\nFrankly gate unlock dialogue")
             input("\nRogueport Sewer pipe unlocked!")
-            rogueport_east = gm.room_list["Rogueport East"]
-            rogueport_east.destinations.remove("Locked Gate")
-            rogueport_east.destinations.append("Pipe to Rogueport Sewers")
-            gm.room_list["Rogueport East"] = rogueport_east
             gm.gamestate += 1
-        elif gm.gamestate == 3:
+        elif gm.gamestate in [4, 5]:
             input("\nProfessor Frankly: No time to dawdle, let's head through the pipe!")
         else:
             input("\nGamestate Error")
