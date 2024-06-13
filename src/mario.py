@@ -15,6 +15,7 @@ class Mario:
         self.hammer = Move(
             "Hammer", "Whack an enemy with your hammer", 2, False, True)
         self.moves_list = [self.jump, self.hammer]
+        self.special_moves = []
 
     def __repr__(self):
         return f"Mario, {self.hp} hp, {self.fp} fp, {self.bp} bp"

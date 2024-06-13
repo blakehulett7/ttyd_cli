@@ -1,10 +1,9 @@
 from mario import Mario
-from enemies import Enemy
-from rooms import Room, Rogueport_Plaza, Rogueport_East, Franklys_House
+from dialogue_rooms import Franklys_House, Suspicious_Room
+from rooms import Room, Rogueport_Plaza, Rogueport_East
 from rooms import Rogueport_Sewers_Entrance, Rogueport_Sewers_East_Corridor
-from rooms import Rogueport_Sewers_Lower_Corridor, Suspicious_Room, Thousand_Year_Door
+from rooms import Rogueport_Sewers_Lower_Corridor, Thousand_Year_Door
 from battle_moves import headbonk, spikebonk, dive
-from battles import battle
 
 
 class Game_Master:
@@ -26,5 +25,5 @@ class Game_Master:
             "Thousand Year Door": Thousand_Year_Door()
         }
 
-    def check_special(self):
+    def debug_info(self):
         print("\n", self.gamestate, self.room)
