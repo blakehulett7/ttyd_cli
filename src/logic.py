@@ -1,6 +1,6 @@
 from mario import Mario
 from enemies import Enemy
-from rooms import Room, Franklys_House
+from rooms import Room, Rogueport_Plaza, Rogueport_East, Franklys_House
 from battle_moves import headbonk, spikebonk, dive
 from battles import battle
 
@@ -12,8 +12,8 @@ class Game_Master:
         self.gamestate = 1
         self.zess_t = False
         self.room_list = {
-            "Rogueport Plaza": Room("Rogueport Plaza", "rp_tattle", ["Rogueport East"], None, None),
-            "Rogueport East": Room("Rogueport East", "re_tattle", [
+            "Rogueport Plaza": Rogueport_Plaza("Rogueport Plaza", "rp_tattle", ["Rogueport East"], None, None),
+            "Rogueport East": Rogueport_East("Rogueport East", "re_tattle", [
                 "Rogueport Plaza",
                 "Frankly's House",
                 "Merlin's House",
@@ -27,14 +27,7 @@ class Game_Master:
         }
 
     def check_special(self):
-        print(self.gamestate, self.room)
-        if self.gamestate == 3:
-            if self.room == self.room_list["Rogueport East"]:
-                rogueport_east = self.room_list["Rogueport East"]
-                rogueport_east.destinations.remove("Locked Gate")
-                rogueport_east.destinations.append("Pipe to Rogueport Sewers")
-                self.room_list["Rogueport East"] = rogueport_east
-                self.gamestate += 1
+        print("\n", self.gamestate, self.room)
         if self.gamestate == 4:
             if self.room == self.room_list["Rogueport Sewers"]:
                 input("\nGoomba Bros Fight")

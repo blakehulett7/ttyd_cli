@@ -133,7 +133,21 @@ class Dialogue_Room:
 
 
 class Rogueport_Plaza(Room):
-    def __init__
+    def __init__(self, name, description, destinations, enemies, enemy_formations):
+        super().__init__(name, description, destinations, enemies, enemy_formations)
+
+    def check_gamestate(self, gm):
+        pass
+
+
+class Rogueport_East(Room):
+    def __init__(self, name, description, destinations, enemies, enemy_formations):
+        super().__init__(name, description, destinations, enemies, enemy_formations)
+
+    def check_gamestate(self, gm):
+        if gm.gamestate >= 3:
+            self.destinations.remove("Locked Gate")
+            self.destinations.append("Pipe to Rogueport Sewers")
 
 
 class Franklys_House:
@@ -143,6 +157,9 @@ class Franklys_House:
 
     def __repr__(self):
         return f"{self.name}"
+
+    def check_gamestate(self, gm):
+        pass
 
     def launch(self, gm):
         if gm.gamestate == 2:

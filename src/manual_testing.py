@@ -7,10 +7,11 @@ from battle_moves import Enemy_Move
 def main():
     gm = Game_Master()
     gm.gamestate = 2
-    gm.room = gm.room_list["Rogueport East"]
+    gm.room = gm.room_list["Rogueport Plaza"]
     running = True
     while running:
         gm.check_special()
+        gm.room.check_gamestate(gm)
         gm.room.launch(gm)
 
 
