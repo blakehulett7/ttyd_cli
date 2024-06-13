@@ -69,6 +69,9 @@ class Room:
                     new_room_key = self.destinations[dest_index]
                     if "Pipe to" in new_room_key:
                         new_room_key = new_room_key.replace("Pipe to ", "")
+                    if "Paper Airplane to" in new_room_key:
+                        new_room_key = new_room_key.replace(
+                            "Paper Airplane to ", "")
                     if new_room_key not in gm.room_list:
                         input("\nNot Implemented Yet")
                     else:
@@ -226,6 +229,8 @@ class Rogueport_Sewers_Lower_Corridor(Room):
         self.enemies = self.enemies_backup
         input("\nUpon entering the room, a small grey creature notices you...")
         input("\nIt panics and crawls into a crack in the wall.")
+        if "airplane" in gm.mario.paper_mode:
+            self.destinations.append("Paper Airplane to Thousand Year Door")
 
     def pick_formation(self):
         possible_formations = [
@@ -236,6 +241,20 @@ class Rogueport_Sewers_Lower_Corridor(Room):
         ]
         index = random.randint(0, 3)
         return possible_formations[index]
+
+
+class Thousand_Year_Door(Room):
+    def __init__(self):
+        self.name = "The Thousand Year Door"
+        self.description = "ttyd_tattle"
+        self.destinations = ["Lower Corridor"]
+        self.enemies = None
+        self.enemies_backup = None
+
+    def check_gamestate(self, gm):
+        if gm.gamestate == 4:
+            input("\nFirst Door Cutscene...")
+            gm.gamestate += 1
 
 
 class Suspicious_Room:

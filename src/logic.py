@@ -2,7 +2,7 @@ from mario import Mario
 from enemies import Enemy
 from rooms import Room, Rogueport_Plaza, Rogueport_East, Franklys_House
 from rooms import Rogueport_Sewers_Entrance, Rogueport_Sewers_East_Corridor
-from rooms import Rogueport_Sewers_Lower_Corridor, Suspicious_Room
+from rooms import Rogueport_Sewers_Lower_Corridor, Suspicious_Room, Thousand_Year_Door
 from battle_moves import headbonk, spikebonk, dive
 from battles import battle
 
@@ -22,7 +22,8 @@ class Game_Master:
             "Entrance": Rogueport_Sewers_Entrance(),
             "East Corridor": Rogueport_Sewers_East_Corridor(),
             "Lower Corridor": Rogueport_Sewers_Lower_Corridor(),
-            "Suspicious Doorway": Suspicious_Room()
+            "Suspicious Doorway": Suspicious_Room(),
+            "Thousand Year Door": Thousand_Year_Door()
         }
 
     def check_special(self):

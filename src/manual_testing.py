@@ -8,8 +8,9 @@ from partners import Goombella
 def main():
     gm = Game_Master()
     gm.partners.append(Goombella())
+    gm.mario.paper_mode.append("airplane")
     gm.gamestate = 4
-    gm.room = gm.room_list["Lower Corridor"]
+    gm.room = gm.room_list["Thousand Year Door"]
     running = True
     while running:
         gm.check_special()
