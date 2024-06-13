@@ -190,9 +190,9 @@ class Rogueport_Sewers_Entrance(Room):
         self.destinations = [
             "Underground Town",
             "Pipe to East Corridor"]
-        self.enemies = None
-        self.enemies_backup = [spiky_goomba]
-        self.enemy_formations = {spiky_goomba: [spiky_goomba, spiky_goomba]}
+        self.enemies = []
+        self.enemies_backup = []
+        self.enemy_formations = {"Spiky Goomba": [spiky_goomba, spiky_goomba]}
 
     def check_gamestate(self, gm):
         if gm.gamestate == 3:
@@ -200,6 +200,8 @@ class Rogueport_Sewers_Entrance(Room):
             enemies = [goomba, spiky_goomba, paragoomba]
             battle(gm.mario, gm.partners, enemies)
             gm.gamestate += 1
+        if gm.gamestate >= 5:
+            self.enemies.append("Spiky Goomba")
 
 
 class Rogueport_Sewers_East_Corridor(Room):
@@ -261,5 +263,7 @@ class Thousand_Year_Door(Room):
             input("\nSweet Treat Tutorial goes here.")
             input(
                 "\nFinally, Frankly tells us to go to Petal Meadows and we exit his house")
+            input("\nAfter we leave, Frankly chases after us to give us a Power Smash.")
+            input("\nInsert badge tutorial here")
             gm.gamestate += 1
             gm.room = gm.room_list["Rogueport East"]
