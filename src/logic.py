@@ -1,5 +1,5 @@
 from mario import Mario
-from dialogue_rooms import Franklys_House, Suspicious_Room
+from dialogue_rooms import Franklys_House, Suspicious_Room, Petal_Meadows
 from rooms import Room, Rogueport_Plaza, Rogueport_East
 from rooms import Rogueport_Sewers_Entrance, Rogueport_Sewers_East_Corridor, Flooded_Room
 from rooms import Rogueport_Sewers_Lower_Corridor, Thousand_Year_Door
@@ -23,7 +23,8 @@ class Game_Master:
             "East Corridor": Rogueport_Sewers_East_Corridor(),
             "Lower Corridor": Rogueport_Sewers_Lower_Corridor(),
             "Suspicious Doorway": Suspicious_Room(),
-            "Thousand Year Door": Thousand_Year_Door()
+            "Thousand Year Door": Thousand_Year_Door(),
+            "Petal Meadows": Petal_Meadows()
         }
 
     def debug_info(self):

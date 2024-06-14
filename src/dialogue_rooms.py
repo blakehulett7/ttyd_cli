@@ -41,3 +41,17 @@ class Franklys_House:
         else:
             input("\nGamestate Error")
         gm.room = gm.room_list["Rogueport East"]
+
+
+class Petal_Meadows:
+    def __init__(self):
+        self.name = "Petal Meadows"
+
+    def __repr__(self):
+        return f"{self.name}"
+
+    def check_gamestate(self, gm):
+        pass
+
+    def launch(self, gm):
+        input("\n-----END OF PROLOGUE-----")

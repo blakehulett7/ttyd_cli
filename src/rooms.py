@@ -216,6 +216,8 @@ class Flooded_Room(Room):
         if gm.gamestate == 5:
             input("\nBlooper fight here...")
             gm.gamestate += 1
+        if gm.gamestate >= 6 and "Pipe to Petal Meadows" not in self.destinations:
+            self.destinations.append("Pipe to Petal Meadows")
 
 
 class Rogueport_Sewers_East_Corridor(Room):

@@ -7,8 +7,8 @@ def main():
     gm = Game_Master()
     gm.partners.append(Goombella())
     gm.mario.paper_mode.append("airplane")
-    gm.gamestate = 4
-    gm.room = gm.room_list["Thousand Year Door"]
+    gm.gamestate = 5
+    gm.room = gm.room_list["Flooded Room"]
     running = True
     while running:
         gm.debug_info()
