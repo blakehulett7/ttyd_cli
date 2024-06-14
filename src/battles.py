@@ -78,10 +78,11 @@ def battle(mario, partner_list, enemy_list):
         input("\nGame Over")
         return False
 
-        input()
-
 
 def remove_dead_enemies(enemy_list):
     for enemy in enemy_list:
         if enemy.hp <= 0:
             enemy_list.remove(enemy)
+            allies = enemy_list
+            if hasattr(enemy, "death_event"):
+                enemy.death_event(allies)

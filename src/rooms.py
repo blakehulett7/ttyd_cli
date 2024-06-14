@@ -1,5 +1,5 @@
 import random
-from enemies import Goomba, Spiky_Goomba, Paragoomba, Spinia
+from enemies import Goomba, Spiky_Goomba, Paragoomba, Spinia, Blooper_Left, Blooper_Right, Blooper
 from battles import battle
 
 
@@ -215,6 +215,8 @@ class Flooded_Room(Room):
     def check_gamestate(self, gm):
         if gm.gamestate == 5:
             input("\nBlooper fight here...")
+            enemies = [Blooper_Left(), Blooper_Right(), Blooper()]
+            battle(gm.mario, gm.partners, enemies)
             gm.gamestate += 1
         if gm.gamestate >= 6 and "Pipe to Petal Meadows" not in self.destinations:
             self.destinations.append("Pipe to Petal Meadows")
