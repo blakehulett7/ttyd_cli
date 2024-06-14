@@ -1,15 +1,14 @@
 from cutscenes import opening_sequence, goombella_crump_sequence, post_crump_opener, plaza_entrance
 from battles import crump_opener
 from action_menu import action_menu_opener
-from logic import Mario, Enemy, Game_Master
+from logic import Game_Master
 from battle_moves import Enemy_Move
-from rooms import Room
+from mario import Mario
 
 
 def main():
     gm = Game_Master()
     # Rogueport Docks
-    opening_sequence()
     action_menu_opener()
     goombella_crump_sequence()
     mario = Mario()

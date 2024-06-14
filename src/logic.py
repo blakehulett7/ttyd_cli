@@ -15,6 +15,7 @@ class Game_Master:
         self.gamestate = 1
         self.zess_t = False
         self.room_list = {
+            "Rogueport Harbor":
             "Rogueport Plaza": Rogueport_Plaza(),
             "Rogueport East": Rogueport_East(),
             "Frankly's House": Franklys_House(),

@@ -147,6 +147,18 @@ class Dialogue_Room:
         self.counter += 1
 
 
+class Rogueport_Harbor(Room):
+    def __init_(self):
+        super().__init__()
+        self.name = "Rogueport Harbor"
+        self.description = "rh_tattle"
+        self.destinations = ["Rogueport Plaza"]
+
+    def check_gamestate(self, gm):
+        if gm.gamestate == 1:
+            input("\nIntro cutscene, now we are fighting Crump")
+
+
 class Rogueport_Plaza(Room):
     def __init__(self):
         self.name = "Rogueport Plaza"

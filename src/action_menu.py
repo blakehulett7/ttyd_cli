@@ -1,4 +1,3 @@
-from logic import tattle
 
 
 def action_menu_opener():
@@ -27,8 +26,7 @@ def action_menu_prefight(gm):
     if action == "1":
         return
     elif action == "2":
-        tattle(gm.room)
-        input()
+        input("\nDock Tattle")
         action_menu_prefight(gm)
     elif action == "3":
         print("\nHA! There's no saving chump.")

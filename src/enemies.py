@@ -1,5 +1,5 @@
 import random
-from battle_moves import headbonk, spikebonk, dive, spin
+from battle_moves import body_slam, headbonk, spikebonk, dive, spin
 
 
 class Enemy:
@@ -9,6 +9,22 @@ class Enemy:
     def turn(self, target):
         input(f"\n-----{self.name}'s turn-----")
         selected_move = random.choice(self.moves_list)
+        selected_move.battle(self, target)
+        input(f"\nend of {self.name}'s turn")
+
+
+class Lord_Crump(Enemy):
+    def __init__(self):
+        self.name = "Lord Crump"
+        self.hp = 5
+        self.attack = 1
+        self.defense = 0
+        self.special = None
+
+    def turn(self, formation):
+        input(f"\n-----{self.name}'s turn-----")
+        target = random.choice(formation)
+        selected_move = body_slam
         selected_move.battle(self, target)
         input(f"\nend of {self.name}'s turn")
 
