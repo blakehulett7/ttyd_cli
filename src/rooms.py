@@ -177,7 +177,7 @@ class Rogueport_East(Room):
     def check_gamestate(self, gm):
         if gm.gamestate >= 3 and "Locked Gate" in self.destinations:
             self.destinations.remove("Locked Gate")
-            self.destinations.append("Pipe to Rogueport Sewers")
+            self.destinations.append("Pipe to Rogueport Sewers Entrance")
 
 
 class Rogueport_Sewers_Entrance(Room):
@@ -205,11 +205,25 @@ class Rogueport_Sewers_Entrance(Room):
             self.destinations.append("Paper Airplane to Flooded Room")
 
 
+class Flooded_Room(Room):
+    def __init__(self):
+        super().__init__()
+        self.name = "Rogueport Sewers: Flooded Room"
+        self.description = "rsf_tattle"
+        self.destinations = ["Rogueport Sewers Entrance"]
+
+    def check_gamestate(self, gm):
+        if gm.gamestate == 5:
+            input("\nBlooper fight here...")
+            gm.gamestate += 1
+
+
 class Rogueport_Sewers_East_Corridor(Room):
     def __init__(self):
         self.name = "Rogueport Sewers: East Corridor"
         self.description = "rse_tattle"
-        self.destinations = ["Pipe to Entrance", "Pipe to Lower Corridor"]
+        self.destinations = [
+            "Pipe to Rogueport Sewers Entrance", "Pipe to Lower Corridor"]
         self.enemies = ["Goomba", "Spiky Goomba", "Paragoomba"]
         self.enemies_backup = ["Goomba", "Spiky Goomba", "Paragoomba"]
         self.enemy_formations = {
@@ -269,3 +283,4 @@ class Thousand_Year_Door(Room):
             input("\nInsert badge tutorial here")
             gm.gamestate += 1
             gm.room = gm.room_list["Rogueport East"]
+            gm.room.check_gamestate(gm)
