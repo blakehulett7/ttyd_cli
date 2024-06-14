@@ -113,7 +113,7 @@ class Blooper(Enemy):
                 if not self.been_stunned:
                     self.been_stunned = True
                     self.stunned = True
-                    self.stun_counter = 0
+                    self.stun_counter = 1
                     input("\nBlooper is stunned and his turn is skipped...")
                     print("")
                 else:

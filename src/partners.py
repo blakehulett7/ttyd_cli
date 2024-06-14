@@ -71,8 +71,6 @@ class Goombella(Partner):
                 else:
                     self.tattle(target)
 
-        input("\nend of Goombella's turn")
-
     def headbonk(self, target):
         if target.special == "spike":
             input(f"\nGoombella jumps on {target.name}...")

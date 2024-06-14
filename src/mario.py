@@ -63,7 +63,6 @@ class Mario:
                         confirmed = True
                 if not go_back:
                     self.battle_hammer(enemy_list[0])
-        input("\nend of Mario's turn")
 
     def target_selection(self, enemy_list):
         confirmed = False
