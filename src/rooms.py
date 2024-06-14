@@ -218,6 +218,8 @@ class Flooded_Room(Room):
             enemies = [Blooper_Left(), Blooper_Right(), Blooper()]
             battle(gm.mario, gm.partners, enemies)
             gm.gamestate += 1
+            input("\nAn enticing grey pipe has appeared...")
+            self.check_gamestate(gm)
         if gm.gamestate >= 6 and "Pipe to Petal Meadows" not in self.destinations:
             self.destinations.append("Pipe to Petal Meadows")
 
