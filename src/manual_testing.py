@@ -8,7 +8,7 @@ def main():
     gm.partners.append(Goombella())
     gm.mario.paper_mode.append("airplane")
     gm.gamestate = 5
-    gm.room = gm.room_list["Rogueport East"]
+    gm.room = gm.room_list["Rogueport Sewers"]
     running = True
     while running:
         gm.debug_info()

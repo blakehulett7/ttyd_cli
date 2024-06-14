@@ -200,6 +200,9 @@ class Rogueport_Sewers_Entrance(Room):
             gm.gamestate += 1
         if gm.gamestate >= 5 and gm.previous_room != self:
             self.enemies.append("Spiky Goomba")
+        if ("airplane" in gm.mario.paper_mode and
+                "Paper Airplane to Flooded Room" not in self.destinations):
+            self.destinations.append("Paper Airplane to Flooded Room")
 
 
 class Rogueport_Sewers_East_Corridor(Room):
@@ -226,10 +229,11 @@ class Rogueport_Sewers_Lower_Corridor(Room):
         self.enemy_formations = {"Spinia": self.pick_formation()}
 
     def check_gamestate(self, gm):
-        self.enemies = self.enemies_backup
-        input("\nUpon entering the room, a small grey creature notices you...")
-        input("\nIt panics and crawls into a crack in the wall.")
-        if "airplane" in gm.mario.paper_mode:
+        if gm.previous_room == gm.room_list["East Corridor"]:
+            input("\nUpon entering the room, a small grey creature notices you...")
+            input("\nIt panics and crawls into a crack in the wall.")
+        if ("airplane" in gm.mario.paper_mode and
+                "Paper Airplane to Thousand Year Door" not in self.destinations):
             self.destinations.append("Paper Airplane to Thousand Year Door")
 
     def pick_formation(self):
