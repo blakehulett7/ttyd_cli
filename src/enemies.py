@@ -21,8 +21,9 @@ class Goomba(Enemy):
         self.defense = 0
         self.special = None
 
-    def turn(self, target):
+    def turn(self, formation):
         input(f"\n-----{self.name}'s turn-----")
+        target = random.choice(formation)
         selected_move = headbonk
         selected_move.battle(self, target)
         input(f"\nend of {self.name}'s turn")
@@ -36,8 +37,9 @@ class Spiky_Goomba(Enemy):
         self.defense = 0
         self.special = "spike"
 
-    def turn(self, target, allies):
+    def turn(self, formation):
         input(f"\n-----{self.name}'s turn-----")
+        target = random.choice(formation)
         selected_move = spikebonk
         selected_move.battle(self, target)
         input(f"\nend of {self.name}'s turn")
@@ -51,8 +53,9 @@ class Paragoomba(Enemy):
         self.defense = 0
         self.special = "wings"
 
-    def turn(self, target):
+    def turn(self, formation):
         input(f"\n-----{self.name}'s turn-----")
+        target = random.choice(formation)
         selected_move = dive
         selected_move.battle(self, target)
         input(f"\nend of {self.name}'s turn")
@@ -66,8 +69,9 @@ class Spinia(Enemy):
         self.defense = 0
         self.special = None
 
-    def turn(self, target):
+    def turn(self, formation):
         input(f"\n-----{self.name}'s turn-----")
+        target = formation[0]
         selected_move = spin
         selected_move.battle(self, target)
         input(f"\nend of {self.name}'s turn")
