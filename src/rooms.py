@@ -198,7 +198,7 @@ class Rogueport_Sewers_Entrance(Room):
             enemies = [Goomba(), Spiky_Goomba(), Paragoomba()]
             battle(gm.mario, gm.partners, enemies)
             gm.gamestate += 1
-        if gm.gamestate >= 5:
+        if gm.gamestate >= 5 and gm.previous_room != self:
             self.enemies.append("Spiky Goomba")
 
 

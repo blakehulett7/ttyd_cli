@@ -13,6 +13,7 @@ def main():
     while running:
         gm.debug_info()
         gm.room.check_gamestate(gm)
+        gm.previous_room = gm.room
         gm.room.launch(gm)
 
 

@@ -10,6 +10,7 @@ class Game_Master:
     def __init__(self):
         self.mario = Mario()
         self.partners = []
+        self.previous_room = None
         self.room = "Rogueport Docks"
         self.gamestate = 1
         self.zess_t = False
