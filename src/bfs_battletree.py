@@ -27,6 +27,27 @@ class Battletree:
                             enemy
                         ))
             current_node.children.extend(next_layer)
+        elif current_node.team == "good" and current_node.position == 1 and len(formation) == 2:
+            next_layer = []
+            if current_node.user == formation[0]:
+                new_user = formation[1]
+            elif current_node.user == formation[1]:
+                new_user = formation[0]
+            else:
+                print(f"ERROR! bad user - {current_node.user}")
+            for move in new_user.moves_list:
+                for enemy in enemy_list:
+                    next_layer.append(Battlenode(
+                        mario,
+                        partner_list,
+                        enemy_list,
+                        "good",
+                        2,
+                        new_user,
+                        move,
+                        enemy
+                    ))
+            current_node.children.extend(next_layer)
         for child in current_node.children:
             self.create_tree(mario, partner_list, enemy_list, child)
 
