@@ -120,6 +120,7 @@ class Blooper(Enemy):
                     input("\nBlooper floats up a few paces...")
                     input(f"and sprays {target.name} with ink for {
                         damage_calculation} damage")
+                    target.hp -= damage_calculation
 
 
 class Blooper_Left(Enemy):
