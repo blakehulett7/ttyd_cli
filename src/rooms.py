@@ -247,6 +247,7 @@ class Rogueport_Sewers_Lower_Corridor(Room):
         self.enemies = ["Spinia", "Spinia"]
         self.enemies_backup = ["Spinia", "Spinia"]
         self.enemy_formations = {"Spinia": self.pick_formation()}
+        # Known Bug: doesn't re-call the function when I pass the key for the second time.
 
     def check_gamestate(self, gm):
         if gm.previous_room == gm.room_list["East Corridor"]:

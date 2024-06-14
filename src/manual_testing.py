@@ -8,8 +8,8 @@ def main():
     gm = Game_Master()
     gm.partners.append(Goombella())
     gm.mario.paper_mode.append("airplane")
-    gm.gamestate = 5
-    gm.room = gm.room_list["Flooded Room"]
+    gm.gamestate = 4
+    gm.room = gm.room_list["Lower Corridor"]
     running = True
     while running:
         gm.debug_info()
