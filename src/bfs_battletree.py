@@ -3,17 +3,14 @@ from graphics import Colors
 
 class Battletree:
     def __init__(self):
-        self.root = None
+        self.root = Rootnode()
 
     def __repr__(self):
         return f"{self.root}"
 
-    def create_tree(self, mario, partner_list, enemy_list, current_node=None):
+    def create_tree(self, mario, partner_list, enemy_list, current_node):
         partner = partner_list[0]
         formation = [mario, partner]
-        if current_node is None:
-            self.root = Rootnode()
-            self.create_tree(mario, partner_list, enemy_list, self.root)
         if current_node == self.root:
             next_layer = []
             for good_guy in formation:
@@ -30,10 +27,8 @@ class Battletree:
                             enemy
                         ))
             current_node.children.extend(next_layer)
-        '''
         for child in current_node.children:
             self.create_tree(mario, partner_list, enemy_list, child)
-        '''
 
 
 class Battlenode:
