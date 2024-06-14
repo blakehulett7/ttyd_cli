@@ -1,16 +1,13 @@
 import random
-from enemies import goomba, spiky_goomba, paragoomba, spinia
+from enemies import Goomba, Spiky_Goomba, Paragoomba, Spinia
 from battles import battle
 
 
 class Room:
-    def __init__(self, name, description, destinations, enemies, enemy_formations):
-        self.name = name
-        self.description = description
-        self.destinations = destinations
-        self.enemies = enemies
-        self.enemies_backup = enemies
-        self.enemy_formations = enemy_formations
+    def __init__(self):
+        self.enemies = None
+        self.enemies_backup = None
+        self.enemy_formations = None
 
     def __repr__(self):
         return f"{self.name}"
@@ -178,7 +175,7 @@ class Rogueport_East(Room):
         self.enemy_formations = None
 
     def check_gamestate(self, gm):
-        if gm.gamestate >= 3:
+        if gm.gamestate >= 3 and "Locked Gate" in self.destinations:
             self.destinations.remove("Locked Gate")
             self.destinations.append("Pipe to Rogueport Sewers")
 
@@ -192,12 +189,13 @@ class Rogueport_Sewers_Entrance(Room):
             "Pipe to East Corridor"]
         self.enemies = []
         self.enemies_backup = []
-        self.enemy_formations = {"Spiky Goomba": [spiky_goomba, spiky_goomba]}
+        self.enemy_formations = {"Spiky Goomba": [
+            Spiky_Goomba(), Spiky_Goomba()]}
 
     def check_gamestate(self, gm):
         if gm.gamestate == 3:
             input("\nGoomba Bros Fight")
-            enemies = [goomba, spiky_goomba, paragoomba]
+            enemies = [Goomba(), Spiky_Goomba(), Paragoomba()]
             battle(gm.mario, gm.partners, enemies)
             gm.gamestate += 1
         if gm.gamestate >= 5:
@@ -212,9 +210,9 @@ class Rogueport_Sewers_East_Corridor(Room):
         self.enemies = ["Goomba", "Spiky Goomba", "Paragoomba"]
         self.enemies_backup = ["Goomba", "Spiky Goomba", "Paragoomba"]
         self.enemy_formations = {
-            "Goomba": [goomba],
-            "Spiky Goomba": [spiky_goomba],
-            "Paragoomba": [paragoomba]
+            "Goomba": [Goomba()],
+            "Spiky Goomba": [Spiky_Goomba()],
+            "Paragoomba": [Paragoomba()]
         }
 
 
@@ -236,10 +234,10 @@ class Rogueport_Sewers_Lower_Corridor(Room):
 
     def pick_formation(self):
         possible_formations = [
-            [spinia],
-            [spinia, spinia],
-            [spinia, spinia, spinia],
-            [spinia, spinia, spinia, spinia]
+            [Spinia()],
+            [Spinia(), Spinia()],
+            [Spinia(), Spinia(), Spinia()],
+            [Spinia(), Spinia(), Spinia(), Spinia()]
         ]
         index = random.randint(0, 3)
         return possible_formations[index]
