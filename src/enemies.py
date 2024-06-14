@@ -85,7 +85,7 @@ class Blooper(Enemy):
         self.stunned = False
         self.been_stunned = False
 
-    def turn(self, target):
+    def turn(self, formation):
         input("\n-----Blooper's Turn-----")
         if self.stunned:
             self.stun_counter += 1
@@ -96,8 +96,9 @@ class Blooper(Enemy):
             else:
                 input("\nBlooper is still stunned...")
         else:
-            damage_calculation = self.attack - target.defense
             if self.left_tentacle or self.right_tentacle:
+                target = random.choice(formation)
+                damage_calculation = self.attack - target.defense
                 if self.left_tentacle and self.right_tentacle:
                     tentacle_side = random.choice(["left", "right"])
                 elif self.left_tentacle:
@@ -117,10 +118,16 @@ class Blooper(Enemy):
                     input("\nBlooper is stunned and his turn is skipped...")
                     print("")
                 else:
+                    target_1 = formation[0]
+                    if len(formation) == 2:
+                        target_2 = formation[1]
+                    dc_1 = self.attack - target_1.defense
+                    dc_2 = self.attack - target_2.defense
                     input("\nBlooper floats up a few paces...")
-                    input(f"and sprays {target.name} with ink for {
-                        damage_calculation} damage")
-                    target.hp -= damage_calculation
+                    input(f"and sprays {target_1.name} and {target_2.name} with ink for {
+                        dc_1} and {dc_2} damage, respectively")
+                    target_1.hp -= dc_1
+                    target_2.hp -= dc_2
 
 
 class Blooper_Left(Enemy):
@@ -131,7 +138,7 @@ class Blooper_Left(Enemy):
         self.defense = 0
         self.special = "wings"
 
-    def turn(self, target):
+    def turn(self, formation):
         pass
 
     def death_event(self, allies):
@@ -149,7 +156,7 @@ class Blooper_Right(Enemy):
         self.defense = 0
         self.special = None
 
-    def turn(self, target):
+    def turn(self, formation):
         pass
 
     def death_event(self, allies):

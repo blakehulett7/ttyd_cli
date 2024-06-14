@@ -71,7 +71,7 @@ def battle(mario, partner_list, enemy_list):
                 remove_dead_enemies(enemy_list)
                 input(f"\nEnd of {good_guy.name}'s turn")
         for enemy in enemy_list:
-            enemy.turn(mario)
+            enemy.turn(formation)
     if enemy_list == []:
         input("\nVictory!")
         return True
