@@ -71,3 +71,12 @@ class Spinia(Enemy):
         selected_move = spin
         selected_move.battle(self, target)
         input(f"\nend of {self.name}'s turn")
+
+
+class Blooper(Enemy):
+    def __init__(self):
+        self.name = "Blooper"
+        self.hp = 12
+        self.attack = 1
+        self.defense = 0
+        self.special = None

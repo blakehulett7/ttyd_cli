@@ -36,7 +36,7 @@ class Franklys_House:
             input("\nFrankly gate unlock dialogue")
             input("\nRogueport Sewer pipe unlocked!")
             gm.gamestate += 1
-        elif gm.gamestate in [4, 5]:
+        elif gm.gamestate in [3, 4]:
             input("\nProfessor Frankly: No time to dawdle, let's head through the pipe!")
         else:
             input("\nGamestate Error")
