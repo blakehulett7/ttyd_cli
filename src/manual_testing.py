@@ -1,6 +1,7 @@
 from cutscenes import opening_sequence, goombella_crump_sequence, post_crump_opener, plaza_entrance
 from logic import Game_Master
 from partners import Goombella
+from enemies import Goomba, Paragoomba
 
 
 def main():

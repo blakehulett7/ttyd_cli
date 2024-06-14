@@ -44,12 +44,7 @@ class Mario:
                 confirmed = False
                 while not confirmed:
                     print("\nYou've selected hammer!")
-                    target = None
-                    for enemy in enemy_list:
-                        if enemy.special != "wings":
-                            target = enemy
-                            break
-                        input("\nNo enemies to hammer")
+                    target = self.auto_target(enemy_list)
                     if target:
                         answer = input(f"You will target {
                             target.name}, is this ok? (Y/n): ")
@@ -59,10 +54,11 @@ class Mario:
                         if answer in ["Y", "y"]:
                             confirmed = True
                     else:
+                        input("\nNo enemies to hammer!")
                         go_back = True
                         confirmed = True
                 if not go_back:
-                    self.battle_hammer(enemy_list[0])
+                    self.battle_hammer(target)
 
     def target_selection(self, enemy_list):
         confirmed = False
@@ -95,6 +91,13 @@ class Mario:
                     result = target
                     confirmed = True
         return result
+
+    def auto_target(self, enemy_list):
+        target = None
+        for enemy in enemy_list:
+            if enemy.special != "wings":
+                return enemy
+        return target
 
     def battle_jump(self, target):
         if target.special == "spike":
