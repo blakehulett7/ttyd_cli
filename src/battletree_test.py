@@ -7,7 +7,5 @@ mario = Mario()
 goombella = Goombella()
 enemies = [Goomba(), Spiky_Goomba(), Paragoomba()]
 tree = Battletree()
+tree.create_tree(mario, [goombella], enemies, tree.root)
 print(tree)
-node = Battlenode("Root")
-node.children = [Battlenode("Mario"), Battlenode("Goombella")]
-print(node)

@@ -10,11 +10,20 @@ class Battletree:
     def __repr__(self):
         return f"{self.root}"
 
-    def create_tree(self, mario, partner_list, enemy_list):
+    def create_tree(self, mario, partner_list, enemy_list, current_node):
         partner = partner_list[0]
         formation = [mario, partner]
-        for good_guy in formation:
-            self.root.children.append(good_guy)
+        if current_node == self.root:
+            for good_guy in formation:
+                self.root.children.append(Battlenode(good_guy))
+        elif hasattr(current_node.val, "moves_list"):
+            for move in current_node.val.moves_list:
+                current_node.children.append(Battlenode(move))
+        else:
+            for enemy in enemy_list:
+                current_node.children.append(Battlenode(enemy))
+        for child in current_node.children:
+            self.create_tree(mario, partner_list, enemy_list, child)
 
 
 class Battlenode:
