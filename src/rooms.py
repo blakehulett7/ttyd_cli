@@ -1,4 +1,5 @@
 import random
+from partners import Goombella
 from enemies import Goomba, Spiky_Goomba, Paragoomba, Spinia, Blooper_Left, Blooper_Right, Blooper
 from battles import battle
 
@@ -157,6 +158,11 @@ class Rogueport_Harbor(Room):
     def check_gamestate(self, gm):
         if gm.gamestate == 1:
             input("\nIntro cutscene, now we are fighting Crump")
+            input("\nCrump Fight Here...")
+            gm.gamestate += 1
+            gm.partners.append(Goombella())
+            gm.room = gm.room_list["Rogueport Plaza"]
+            gm.room.check_gamestate(gm)
 
 
 class Rogueport_Plaza(Room):

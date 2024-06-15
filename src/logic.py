@@ -1,5 +1,6 @@
 from mario import Mario
 from dialogue_rooms import Franklys_House, Suspicious_Room, Petal_Meadows
+from rooms import Rogueport_Harbor
 from rooms import Room, Rogueport_Plaza, Rogueport_East
 from rooms import Rogueport_Sewers_Entrance, Rogueport_Sewers_East_Corridor, Flooded_Room
 from rooms import Rogueport_Sewers_Lower_Corridor, Thousand_Year_Door
@@ -15,7 +16,7 @@ class Game_Master:
         self.gamestate = 1
         self.zess_t = False
         self.room_list = {
-            "Rogueport Harbor":
+            "Rogueport Harbor": Rogueport_Harbor(),
             "Rogueport Plaza": Rogueport_Plaza(),
             "Rogueport East": Rogueport_East(),
             "Frankly's House": Franklys_House(),

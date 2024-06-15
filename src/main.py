@@ -8,19 +8,11 @@ from mario import Mario
 
 def main():
     gm = Game_Master()
-    # Rogueport Docks
-    action_menu_opener()
-    goombella_crump_sequence()
-    mario = Mario()
-    crump = Enemy("Lord Crump", 5, 0, [Enemy_Move("Body Slam", 1)])
-    crump_opener(mario, crump)
-    post_crump_opener()
-    gm.room = gm.room_list["Rogueport Plaza"]
-    plaza_entrance()
-    gm.gamestate = 2
+    gm.room = gm.room_list["Rogueport Harbor"]
+    gm.gamestate = 1
     running = True
     while running:
-        gm.check_special()
+        gm.room.check_gamestate(gm)
         gm.room.launch(gm)
 
 
